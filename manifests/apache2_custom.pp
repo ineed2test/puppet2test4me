@@ -24,7 +24,7 @@ class { 'apache':}
 
 class apache {
   file { '/etc/apache2/sites-available/servername.conf':
-    content => template('files/apache/firstvhost.conf.erb'),
+    content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
