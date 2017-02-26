@@ -14,7 +14,7 @@ class apache::vhosts {
   } elsif $::osfamily == 'Debian' {
     file { "/etc/apache2/sites-available/$servername.conf":
       ensure  => file,
-      content  => template('files/apache/firstvhost.conf.erb'),
+      content  => template('/etc/puppet/environment/staging/files/apache/firstvhost.conf.erb'),
     }
   } else {
     print "This is not a supported distro."
