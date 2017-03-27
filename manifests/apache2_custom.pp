@@ -21,7 +21,7 @@ class { 'apache':}
 # }
 #        
 #}
-$apacheconf='/etc/apache2'
+$apacheconf = "/etc/apache2"
 class apache {
   file { $apacheconf/sites-available/servername.conf:
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
