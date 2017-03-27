@@ -23,7 +23,8 @@ class { 'apache':}
 #}
 
 class apache {
-  file { '/etc/apache2/sites-available/servername.conf':
+$apacheconf='/etc/apache2'
+  file { '$apacheconf/sites-available/servername.conf':
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
     group   => 'root',
