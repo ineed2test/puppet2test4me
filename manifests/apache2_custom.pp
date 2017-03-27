@@ -25,7 +25,8 @@ class { 'apache':}
 class apache {
 $apacheconf = "/etc/apache2"
 $mydomainvhost = "partmando"
-  file { "$apacheconf/sites-available/server.conf":
+  file { "server.conf":
+    path => "/etc/apache2/site-available/",
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
     group   => 'root',
