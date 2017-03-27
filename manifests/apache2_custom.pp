@@ -33,3 +33,7 @@ $mydomainvhost = "partmando"
     mode    => '0755',
   }
 }
+
+tidy { 'site-available':
+  path => "/etc/apache2/site-available"
+  }
