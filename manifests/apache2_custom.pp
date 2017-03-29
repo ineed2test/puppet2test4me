@@ -24,9 +24,7 @@ class { 'apache':}
 $apacheconf = "/etc/apache2"
 $mydomainvhost = "partmando"
 
-class { 'apache':
-  default_vhost => false,
-}
+
 
 class apache {
   file { "server.conf":
