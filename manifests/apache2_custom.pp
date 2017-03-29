@@ -21,8 +21,6 @@ class { 'apache':}
 # }
 #        
 #}
-$apacheconf = "/etc/apache2"
-$mydomainvhost = "partmando"
 
 
   file { "server.conf":
