@@ -35,7 +35,7 @@ class apache {
   }
   
 # set a symlink to vhost in /etc/sites-enable
-  file { "/etc/apache2/sites-enable/server.conf":
+  file { "/etc/apache2/sites-enabled/server.conf":
   ensure => link,
   target => "/etc/apache2/sites-available/server.conf",
 }
