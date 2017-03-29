@@ -32,6 +32,7 @@ class apache {
     group   => 'root',
     mode    => '0755',
   }
+  }
   
 # set a symlink to vhost in /etc/sites-enable
   file { "/etc/apache2/sites-enable/server.conf":
