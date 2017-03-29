@@ -1,4 +1,4 @@
-#class { 'apache':}
+class { 'apache':}
 #apache::vhost { 'blahexample.com': # define vhost resource
 #docroot => '/var/www/html'
 #}
@@ -26,7 +26,7 @@ $mydomainvhost = "partmando"
 
 
 
-class apache::vhosts {
+class apache {
   file { "server.conf":
     path => "/etc/apache2/sites-available/server.conf",
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
