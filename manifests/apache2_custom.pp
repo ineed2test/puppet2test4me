@@ -32,12 +32,12 @@ class apache {
     group   => 'root',
     mode    => '0755',
   }
-  }
   
 # set a symlink to vhost in /etc/sites-enable
   file { "/etc/apache2/sites-enabled/server.conf":
   ensure => link,
   target => "/etc/apache2/sites-available/server.conf",
+}
 }
 
 # delete a wrong named directory
