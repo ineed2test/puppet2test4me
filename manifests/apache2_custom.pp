@@ -22,7 +22,7 @@ class { 'apache':}
 #        
 #}
 
-class apache::vhosts {
+class apache {
     file { '/etc/apache2/sites-available/server.conf':
     ensure => 'file',
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
