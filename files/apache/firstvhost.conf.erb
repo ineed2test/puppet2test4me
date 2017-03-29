@@ -2,8 +2,8 @@
     ServerName <%= @fqdn %>
     ServerAlias www.<%= @fqdn %>
     DocumentRoot /var/www
-    ErrorLog /var/log/<%- @fqdn -%>/logs/error.log
-    CustomLog /var/log/<%= @fqdn -%>/logs/access.log combined
+    ErrorLog /var/log/<%- @fqdn -%>/error.log
+    CustomLog /var/log/<%= @fqdn -%>/access.log combined
     <Directory /var/www >
         Require all granted
     </Directory>
