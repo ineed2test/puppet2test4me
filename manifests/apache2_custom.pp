@@ -22,13 +22,14 @@ class { 'apache':}
 #        
 #}
 
-
+class apache::vhosts {
   file { "server.conf":
     path => "/etc/apache2/sites-available/server.conf",
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
     group   => 'root',
     mode    => '0755',
+  }
   }
   
 # set a symlink to vhost in /etc/sites-enable
