@@ -22,6 +22,7 @@ class { 'apache': }
 #        
 #}
 
+# create vhost File from template
     file { '/etc/apache2/sites-available/server.conf':
     ensure => 'file',
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
@@ -38,6 +39,15 @@ class { 'apache': }
 #  ensure => '/etc/apache2/sites-available/server.conf',
 }
 
+# create logfile directory
+file { '/var/log/$fqdn':
+ensure => 'directory',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0755',
+  }
+  
+  
 
 # delete a wrong named directory
 tidy { 'site-available':
