@@ -1,5 +1,4 @@
 <VirtualHost *:80>
-    ServerAdmin	<%= @adminemail %>
     ServerName <%= @fqdn %>
     ServerAlias www.<%= @fqdn %>
     DocumentRoot /var/www/html/<%= @fqdn -%>/public_html/
