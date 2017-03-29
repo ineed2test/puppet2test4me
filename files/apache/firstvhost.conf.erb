@@ -1,10 +1,10 @@
 <VirtualHost *:80>
     ServerName <%= @fqdn %>
     ServerAlias www.<%= @fqdn %>
-    DocumentRoot /var/www/html/<%= @fqdn -%>/public_html/
-    ErrorLog /var/www/html/<%- @fqdn -%>/logs/error.log
-    CustomLog /var/www/html/<%= @fqdn -%>/logs/access.log combined
-    <Directory /var/www/html/<%= @fqdn -%>/public_html>
+    DocumentRoot /var/www
+    ErrorLog /var/log/<%- @fqdn -%>/logs/error.log
+    CustomLog /var/log/<%= @fqdn -%>/logs/access.log combined
+    <Directory /var/www >
         Require all granted
     </Directory>
 </VirtualHost>
