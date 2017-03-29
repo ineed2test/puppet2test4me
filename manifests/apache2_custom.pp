@@ -35,12 +35,11 @@ class apache {
   }
   
 # set a symlink to vhost in /etc/sites-enable
-class apache {
   file { '/etc/apache2/sites-enabled/server.conf':
   ensure => 'link',
   target => '/etc/apache2/sites-available/server.conf',
 }
-}
+
 
 # delete a wrong named directory
 tidy { 'site-available':
