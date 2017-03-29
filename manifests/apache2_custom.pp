@@ -24,7 +24,7 @@ class { 'apache':}
 
 class apache::vhosts {
     file { '/etc/apache2/sites-available/server.conf':
-    ensure => 'file',
+    ensure => 'present',
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
     group   => 'root',
