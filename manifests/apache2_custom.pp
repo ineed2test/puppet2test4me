@@ -42,9 +42,9 @@ class { 'apache': }
 # create logfile directory
 file { '/var/log/deb02.localdomain':
 ensure => 'directory',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0755',
+#    owner   => 'root',
+#    group   => 'root',
+#    mode    => '0755',
   }
   
   
