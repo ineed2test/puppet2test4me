@@ -40,7 +40,7 @@ class { 'apache': }
 }
 
 # create logfile directory
-file { '/var/log/$facts['fqdn']':
+file { '/var/log/$fqdn':
 ensure => 'directory',
 owner   => 'root',
 group   => 'adm',
