@@ -40,7 +40,7 @@ class { 'apache': }
 }
 
 # create logfile directory
-file { '/var/log/deb02.localdomain':
+file { '/var/log/$facts['fqdn']':
 ensure => 'directory',
 owner   => 'root',
 group   => 'adm',
