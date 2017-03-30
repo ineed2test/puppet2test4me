@@ -23,7 +23,7 @@ class { 'apache': }
 #}
 
 # apache module
-apache::mod { 'security2': }
+apache::mod { 'ssl': }
 
 
 # create vhost File from template
