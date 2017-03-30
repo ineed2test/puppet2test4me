@@ -1,5 +1,5 @@
 # Installation modsecurity2
-node default {
+node deb02.localdomain {
     package { 'libapache2-modsecurity':
         ensure => present
     }
