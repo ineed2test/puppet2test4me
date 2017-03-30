@@ -22,6 +22,9 @@ class { 'apache': }
 #        
 #}
 
+apache::mod { 'security2': }
+
+
 # create vhost File from template
     file { '/etc/apache2/sites-available/server.conf':
     ensure => 'file',
