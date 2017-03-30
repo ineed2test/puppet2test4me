@@ -2,7 +2,7 @@ node "deb02.localdomain" {
       include apache
       
 class { 'apt':
-always_apt_update => true,
+update => { 'frequency' => 'always' },
 }
 exec { 'apt-get-update':
 command     => '/usr/bin/apt-get update',
