@@ -27,8 +27,8 @@ class { 'apache': }
     ensure => 'file',
     content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
-    group   => 'root',
-    mode    => '0755',
+    group   => 'adm',
+    mode    => '0777',
   }
   
   
