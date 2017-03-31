@@ -3,7 +3,7 @@
 node "deb02.localdomain" {
       include apache
       
-class { 'apt':
+class { '::apt':
 update => { 'frequency' => 'always' },
 }
 
