@@ -26,6 +26,16 @@ class { 'apache': }
 apache::mod { 'ssl': }
 apache::mod { 'security2': }
 
+# modsecurity installation
+# 1. copy .erb template
+    file { '/etc/apache2/mods-available/security2.conf':
+    ensure => 'file',
+    content => template('/etc/puppet/environments/staging/files/apache/security2.conf.erb'),
+    owner   => 'root',
+    group   => 'adm',
+    mode    => '0755',
+  }
+
 
 # create vhost File from template
     file { '/etc/apache2/sites-available/server.conf':
