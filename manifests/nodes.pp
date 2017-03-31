@@ -2,9 +2,11 @@
 
 node "deb02.localdomain" {
       include apache
-      include apt
+#      include apt     !!! notworking together with class 'apt'
       
+class {'apt':
 update => { 'frequency' => 'always' }
+}
 
 $packages = ["libapache2-modsecurity"]
 package {
