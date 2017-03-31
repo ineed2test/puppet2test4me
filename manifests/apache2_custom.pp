@@ -22,9 +22,9 @@ class { 'apache': }
 #        
 #}
 
-# apache module
+# apache module / comment out to enable module
 #apache::mod { 'ssl': }
-#apache::mod { 'security2': }
+apache::mod { 'security2': }
 
 
 # create vhost File from template
