@@ -4,9 +4,7 @@ node "deb02.localdomain" {
       include apache
       include apt
       
-class { '::apt':
-update => { 'frequency' => 'always' },
-}
+update => { 'frequency' => 'always' }
 
 $packages = ["libapache2-modsecurity"]
 package {
