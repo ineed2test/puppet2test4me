@@ -12,4 +12,9 @@ $packages = ["libapache2-modsecurity"]
 package {
 $packages: ensure => installed,
 }
+
+$packages = ["git"]
+package {
+$packages: ensure => installed,
+}
 }
