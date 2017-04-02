@@ -8,13 +8,10 @@ class {'apt':
 update => { 'frequency' => 'always' }
 }
 
-$packages = ["libapache2-modsecurity"]
+$packages = ["libapache2-modsecurity","git"]
 package {
 $packages: ensure => installed,
 }
 
-$packages = ["git"]
-package {
-$packages: ensure => installed,
-}
+
 }
