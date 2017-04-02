@@ -35,6 +35,12 @@ apache::mod { 'security2': }
     group   => 'adm',
     mode    => '0755',
   }
+  
+# git clone modsecurity CRS
+git::clone { 'https://github.com/SpiderLabs/owasp-modsecurity-crs.git':
+    path => 'tmp',
+    dir => 'CRS',
+}
 # 2. create directory /etc/modsecurity/activated_rules
     file { "/etc/modsecurity/activated_rules":
     ensure => 'directory',
