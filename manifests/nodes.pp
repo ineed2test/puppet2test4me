@@ -2,6 +2,7 @@
 
 node "deb02.localdomain" {
       include apache
+      include git
 #      include apt     !!! notworking together with class 'apt'
       
 class {'apt':
@@ -13,15 +14,15 @@ package {
 $packages: ensure => installed,
 }
 
-class git{
-    include git::install
-}
-
-class git::install{
-    package { 'git:':
-        ensure => present
-    }
-}
+#class git{
+#    include git::install
+#}
+#
+#class git::install{
+#    package { 'git:':
+#        ensure => present
+#    }
+#}
 
 
 }
