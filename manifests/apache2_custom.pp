@@ -35,7 +35,13 @@ apache::mod { 'security2': }
     group   => 'adm',
     mode    => '0755',
   }
-
+# 2. create directory /etc/modsecurity/activated_rules
+    file { "/etc/modsecurity/activated_rules":
+    ensure => 'directory',
+    owner   => 'root',
+    group   => 'adm',
+    mode    => '0755',
+    }
 
 # create vhost File from template
     file { '/etc/apache2/sites-available/server.conf':
