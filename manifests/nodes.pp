@@ -2,7 +2,7 @@
 
 node "deb02.localdomain" {
       include apache
-      include git
+#      include git
 #      include apt     !!! notworking together with class 'apt'
       
 class {'apt':
