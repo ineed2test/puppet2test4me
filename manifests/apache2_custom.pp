@@ -51,7 +51,7 @@ apache::mod { 'security2': }
     }
 
 # 4. create link source /etc/modsecuritycrs-git-packets-3.0/rules targetlink /etc/modsecurity/activated_rules
-    file { '/etc/modsecuritycrs-git-packets-3.0/rules':
+    file { '/etc/modsecurity/crs-git-packets-3.0/rules':
     ensure => 'link',
     target => '/etc/modsecurity/activated_rules',
     } 
