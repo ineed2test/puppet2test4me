@@ -35,12 +35,25 @@ apache::mod { 'security2': }
     group   => 'adm',
     mode    => '0755',
   }
-  
+ 
 # git clone modsecurity CRS
-git::clone { 'https://github.com/SpiderLabs/owasp-modsecurity-crs.git':
-    path => 'tmp',
-    dir => 'CRS',
+define git::clone ( $path, $dir){
+        name => 'owasp',
+        path => 'tmp',
+        dir => 'CRS',
+    exec { "clone-$name-$path":
+        command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git $path/$dir",
+        creates => "$path/$dir",
+        require => [Class["git"], File[$path]],
+    }
 }
+ 
+ 
+# git clone modsecurity CRS
+#git::clone { 'https://github.com/SpiderLabs/owasp-modsecurity-crs.git':
+#    path => 'tmp',
+#    dir => 'CRS',
+#}
 # 2. create directory /etc/modsecurity/activated_rules
     file { "/etc/modsecurity/activated_rules":
     ensure => 'directory',
