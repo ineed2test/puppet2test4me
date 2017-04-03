@@ -46,7 +46,6 @@ apache::mod { 'security2': }
         creates => "/tmp/CRS",
         require => [Class["git"], File[/tmp]],
     }
-}
  
  
 # git clone modsecurity CRS
