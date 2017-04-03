@@ -39,7 +39,7 @@ apache::mod { 'security2': }
 # 2. git clone modsecurity CRS
     exec { "clone-crs":
         command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /etc/modsecurity/crs-git-packets-3.0",
-        creates => "/tmp/crs-git-packets-3.0",
+        creates => "/etc/modsecurity/crs-git-packets-3.0",
     }
 
 # 3. create link source /etc/modsecuritycrs-git-packets-3.0/rules targetlink /etc/modsecurity/activated_rules
