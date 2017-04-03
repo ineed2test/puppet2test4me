@@ -44,7 +44,7 @@ apache::mod { 'security2': }
     exec { "clone-crs":
         command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /tmp/CRS",
         creates => "/tmp/CRS",
-        require => [Class["git"], File[tmp]],
+        require => File[tmp]],
     }
  
  
