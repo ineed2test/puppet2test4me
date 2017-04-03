@@ -36,29 +36,25 @@ apache::mod { 'security2': }
     mode    => '0755',
   }
  
-# git clone modsecurity CRS
-#define git::clone ( $path, $dir){
-#        name => 'owasp',
-#       path => 'tmp',
-#        dir => 'CRS',
+# 2. git clone modsecurity CRS
     exec { "clone-crs":
-        command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /tmp/CRS",
-        creates => "/tmp/CRS",
+        command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /etc/modsecurity/crs-git-packets-3.0",
+        creates => "/tmp/crs-git-packets-3.0",
     }
- 
- 
-# git clone modsecurity CRS
-#git::clone { 'https://github.com/SpiderLabs/owasp-modsecurity-crs.git':
-#    path => 'tmp',
-#    dir => 'CRS',
-#}
-# 2. create directory /etc/modsecurity/activated_rules
+
+# 3. create directory /etc/modsecurity/activated_rules
     file { "/etc/modsecurity/activated_rules":
     ensure => 'directory',
     owner   => 'root',
     group   => 'adm',
     mode    => '0755',
     }
+
+# 4. create link source /etc/modsecuritycrs-git-packets-3.0/rules targetlink /etc/modsecurity/activated_rules
+    file { '/etc/modsecuritycrs-git-packets-3.0/rules':
+    ensure => 'link',
+    target => '/etc/modsecurity/activated_rules',
+    } 
 
 # create vhost File from template
     file { '/etc/apache2/sites-available/server.conf':
@@ -67,15 +63,14 @@ apache::mod { 'security2': }
     owner   => 'root',
     group   => 'adm',
     mode    => '0777',
-  }
+    }
   
   
 # set a symlink to vhost in /etc/sites-enable
   file { '/etc/apache2/sites-enabled/server.conf':
   ensure => 'link',
   target => '/etc/apache2/sites-available/server.conf',
-#  ensure => '/etc/apache2/sites-available/server.conf',
-}
+  }
 
 # create logfile directory
 file { "/var/log/${::fqdn}":
