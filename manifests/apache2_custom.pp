@@ -37,14 +37,14 @@ apache::mod { 'security2': }
   }
  
 # git clone modsecurity CRS
-define git::clone ( $path, $dir){
-        name => 'owasp',
-        path => 'tmp',
-        dir => 'CRS',
-    exec { "clone-$name-$path":
-        command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git $path/$dir",
-        creates => "$path/$dir",
-        require => [Class["git"], File[$path]],
+#define git::clone ( $path, $dir){
+#        name => 'owasp',
+#       path => 'tmp',
+#        dir => 'CRS',
+    exec { "clone-crs":
+        command => "/usr/bin/git clone https://github.com/SpiderLabs/owasp-modsecurity-crs.git /tmp/CRS",
+        creates => "/tmp/CRS",
+        require => [Class["git"], File[/tmp]],
     }
 }
  
