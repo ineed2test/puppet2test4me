@@ -42,18 +42,10 @@ apache::mod { 'security2': }
         creates => "/tmp/crs-git-packets-3.0",
     }
 
-# 3. create directory /etc/modsecurity/activated_rules
-    file { "/etc/modsecurity/activated_rules":
-    ensure => 'directory',
-    owner   => 'root',
-    group   => 'adm',
-    mode    => '0755',
-    }
-
-# 4. create link source /etc/modsecuritycrs-git-packets-3.0/rules targetlink /etc/modsecurity/activated_rules
-    file { '/etc/modsecurity/crs-git-packets-3.0/rules':
+# 3. create link source /etc/modsecuritycrs-git-packets-3.0/rules targetlink /etc/modsecurity/activated_rules
+    file { '/etc/modsecurity/activated_rules':
     ensure => 'link',
-    target => '/etc/modsecurity/activated_rules',
+    target => '/etc/modsecurity/crs-git-packets-3.0/rules',
     } 
 
 # create vhost File from template
