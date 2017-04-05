@@ -12,6 +12,8 @@ classes:
   - roles::puppet::agent
   - ntp
   - roles
+  - concat
+  - stdlib
   
 'test':
     sshkeys:
