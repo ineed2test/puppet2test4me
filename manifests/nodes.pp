@@ -1,6 +1,6 @@
 ## define nodes with associated modules and distro packages
 
-node "deb02.localdomain" {
+node 'deb02.localdomain' {
       include apache
 #      include git
 #      include apt     !!! notworking together with class 'apt'
