@@ -1,0 +1,7 @@
+---
+
+sudo::configs:
+  'developer_can_act_as_datingcafe':
+    content: 'developer ALL=(datingcafe)NOPASSWD: ALL'
+  'developer_can_control_tomcat_service':
+    content: 'developer ALL=NOPASSWD: /etc/init.d/tomcat'
