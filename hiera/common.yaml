@@ -4,8 +4,6 @@ environment: staging
 puppet::agent::environment: staging
 
 classes:
-  - apt
-  - apt::backports
   - stdlib
   - sudo
   - sudo::configs
