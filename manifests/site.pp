@@ -13,7 +13,7 @@ file {'/tmp/example-ip':                                            # resource t
 #}
 
 # include base classes
-hiera_include('classes')
+#hiera_include('classes')
 #
 #$files = hiera_hash('files', {})
 #create_resources('file', $files)
@@ -23,3 +23,25 @@ hiera_include('classes')
 #
 #$groups = hiera_hash('groups', {})
 #create_resources('group', $groups)
+
+
+define hiera_users::configure (
+  $_users  = hiera_hash("hiera_users::configure::users_${name}", undef),
+  $_groups = hiera_hash("hiera_users::configure::groups_${name}", undef),
+) {
+  if $_groups {
+    $groups = keys($_groups)
+    hiera_users::configure::groups {
+      $groups:
+        data => $_groups;
+    }
+  }
+
+  if $_users {
+    $users = keys($_users)
+    hiera_users::configure::users {
+      $users:
+        data => $_users;
+    }
+  }
+}
