@@ -1,3 +1,8 @@
+     group { 'web':
+  			  ensure => 'present',
+  			  gid    => '502',
+     }
+
 user { 'jargyle':
  			  ensure           => 'present',
        gid              => '1501',
