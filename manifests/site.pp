@@ -12,8 +12,7 @@ file {'/tmp/example-ip':                                            # resource t
 #  }
 #}
 
-# include base classes
-#hiera_include('classes')
+
 #
 #$files = hiera_hash('files', {})
 #create_resources('file', $files)
@@ -45,3 +44,6 @@ define hiera_users::configure (
     }
   }
 }
+
+# include base classes
+hiera_include('classes')
