@@ -11,7 +11,7 @@ classes:
 #  - kundea
 #   - group
 #   - user
-    - hiera_users
+
 
 #admins:
 #'test':
