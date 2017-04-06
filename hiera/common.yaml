@@ -10,7 +10,6 @@ classes:
   - sudo
   - sudo::configs
   - ntp
-  - roles
   - concat
   
 'test':
