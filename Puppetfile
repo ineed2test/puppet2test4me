@@ -6,3 +6,4 @@ mod 'saz/sudo', :latest
 mod 'puppetlabs/apt', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/concat', :latest
+mod 'puppetlabs/ntp', :latest
