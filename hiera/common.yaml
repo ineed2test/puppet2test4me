@@ -12,7 +12,6 @@ classes:
 #   - group
 #   - user
     - hiera_users
-    - hiera_groups
 
 #admins:
 #'test':
