@@ -13,7 +13,6 @@ classes:
   - ntp
   - roles
   - concat
-  - stdlib
   
 'test':
     sshkeys:
