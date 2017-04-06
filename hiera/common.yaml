@@ -9,7 +9,6 @@ classes:
   - stdlib
   - sudo
   - sudo::configs
-  - roles::puppet::agent
   - ntp
   - roles
   - concat
