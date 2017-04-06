@@ -8,6 +8,7 @@ classes:
   - sudo
   - sudo::configs
   - ntp
+  - kundea
   
 'test':
     sshkeys:
