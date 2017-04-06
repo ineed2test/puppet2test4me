@@ -46,4 +46,4 @@ define hiera_users::configure (
 }
 
 # include base classes
-hiera_include('classes')
+#hiera_include('classes')
