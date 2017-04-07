@@ -11,3 +11,4 @@ class mymotd {
     group  => 'root',
     mode   => '0755'
   }
+  }
