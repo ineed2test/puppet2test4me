@@ -2,4 +2,5 @@
 #  class { '::kundea::admins': }
 #}
 
-class { 'hiera_users': }
+#class { 'hiera_users': }
+include hiera_users
