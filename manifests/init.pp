@@ -3,4 +3,4 @@
 #}
 
 #class { 'hiera_users': }
-include hiera_users
+#include hiera_users
