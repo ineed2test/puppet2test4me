@@ -4,7 +4,7 @@ node 'deb02.localdomain' {
       include apache
       class { 'mymotd': }
       class kundea {
-      class { '::kundea::admins': }
+      class { 'kundea::admins': }
       }
 
 #      include git
