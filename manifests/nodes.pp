@@ -2,6 +2,7 @@
 
 node 'deb02.localdomain' {
       include apache
+      class { 'mymotd': }
 #      include git
 #      include apt     !!! notworking together with class 'apt'
       
