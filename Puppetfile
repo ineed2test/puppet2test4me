@@ -9,3 +9,5 @@ mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/ntp', :latest
 mod 'puppet-hiera_users',
 :git => 'https://github.com/greenaar/puppet-hiera_users.git'
+mod 'credativ/ssh', :git => 'git://github.com/credativ/puppet-ssh-hiera.git'
+
