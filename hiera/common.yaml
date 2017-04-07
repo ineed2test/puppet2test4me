@@ -6,7 +6,6 @@ puppet::agent::environment: staging
 classes:
   - stdlib
   - sudo
-  - apt
 #  - sudo::configs
   - ntp
 #  - kundea
