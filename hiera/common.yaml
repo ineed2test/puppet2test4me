@@ -4,14 +4,14 @@ environment: staging
 puppet::agent::environment: staging
 
 classes:
-#  - stdlib
-#  - sudo
+  - stdlib
+  - sudo
+  - apt
 #  - sudo::configs
-#  - ntp
+  - ntp
 #  - kundea
 #   - group
 #   - user
-    - kundea
 
 admins:
 'test':
