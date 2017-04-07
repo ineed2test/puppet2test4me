@@ -29,3 +29,6 @@ $packages: ensure => installed,
 
 
 }
+
+# include base classes
+hiera_include('classes')
