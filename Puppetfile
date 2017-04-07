@@ -7,3 +7,5 @@ mod 'puppetlabs/apt', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/ntp', :latest
+mod 'puppet-hiera_users',
+:git => 'https://github.com/greenaar/puppet-hiera_users.git'
