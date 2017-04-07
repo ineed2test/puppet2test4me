@@ -1,6 +1,6 @@
 #
 
-class datingcafebase::admins {
+class kundea::admins {
   hiera_hash('admins').each |$username,$props| {
     user { $username:
       uid      => pick_default($props['uid'],false),
