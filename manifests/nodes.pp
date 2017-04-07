@@ -3,7 +3,10 @@
 node 'deb02.localdomain' {
       include apache
       class { 'mymotd': }
-      class { 'kundea::admins': }
+      class kundea {
+      class { '::kundea::admins': }
+      }
+
 #      include git
 #      include apt     !!! notworking together with class 'apt'
       
