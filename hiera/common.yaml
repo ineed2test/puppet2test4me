@@ -9,7 +9,7 @@ classes:
   - sudo::configs
   - ntp
   - kundea
-  - kundena::admins
+  - kundea::admins
 #   - group
 #   - user
 
