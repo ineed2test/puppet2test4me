@@ -3,6 +3,8 @@
 node 'deb02.localdomain' {
       include apache
       class { 'mymotd': }
+#      class {'::accounts':}
+#      class { 'hiera_users': }
 
 #      include git
 #      include apt     !!! notworking together with class 'apt'

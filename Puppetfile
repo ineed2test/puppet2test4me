@@ -7,7 +7,5 @@ mod 'puppetlabs/apt', :latest
 mod 'puppetlabs/stdlib', :latest
 mod 'puppetlabs/concat', :latest
 mod 'puppetlabs/ntp', :latest
-mod 'puppet-hiera_users',
-:git => 'https://github.com/greenaar/puppet-hiera_users.git'
-mod 'credativ/ssh', :git => 'git://github.com/credativ/puppet-ssh-hiera.git'
-
+mod 'mymotd', :git => 'https://github.com/ineed2test/mymotd.git'
+mod 'deric/account', :git => 'https://github.com/deric/puppet-accounts.git'

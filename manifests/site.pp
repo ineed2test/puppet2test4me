@@ -14,13 +14,14 @@ file {'/tmp/example-ip':                                            # resource t
 
 
 # include base classes
-#hiera_include('classes')
+hiera_include('classes')
 
 #$files = hiera_hash('files', {})
 #create_resources('file', $files)
-#
+
 #$users = hiera_hash('users', {})
 #create_resources('user', $users)
-#
+
 #$groups = hiera_hash('groups', {})
 #create_resources('group', $groups)
+
