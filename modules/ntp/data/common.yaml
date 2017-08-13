@@ -31,7 +31,9 @@ ntp::package_manage: true
 ntp::package_name: [ 'ntp' ]
 ntp::panic: ~
 ntp::peers: []
+ntp::pool: []
 ntp::preferred_servers: []
+ntp::noselect_servers: []
 ntp::servers:
   - '0.pool.ntp.org'
   - '1.pool.ntp.org'
@@ -42,6 +44,8 @@ ntp::service_ensure: running
 ntp::service_manage: true
 ntp::service_name: ntpd
 ntp::service_provider: ~
+ntp::statistics: []
+ntp::statsdir: '/var/log/ntpstats'
 ntp::stepout: ~
 ntp::step_tickers_file: ~
 ntp::step_tickers_template: ~

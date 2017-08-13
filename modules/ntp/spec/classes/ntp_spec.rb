@@ -103,6 +103,30 @@ describe 'ntp' do
             }
           end
         end
+
+        describe 'noselect servers' do
+          context "when set" do
+            let(:params) {{
+              :servers          => ['a', 'b', 'c', 'd'],
+              :noselect_servers => ['a', 'b'],
+              :iburst_enable    => false,
+            }}
+
+            it { should contain_file('/etc/ntp.conf').with({
+              'content' => /server a (maxpoll 9 )?noselect\nserver b (maxpoll 9 )?noselect\nserver c( maxpoll 9)?\nserver d( maxpoll 9)?/})
+            }
+          end
+          context "when not set" do
+            let(:params) {{
+              :servers          => ['a', 'b', 'c', 'd'],
+              :noselect_servers => []
+            }}
+
+            it { should_not contain_file('/etc/ntp.conf').with({
+              'content' => /server a noselect/})
+            }
+          end
+        end
         describe 'specified interfaces' do
           context "when set" do
             let(:params) {{
@@ -352,8 +376,8 @@ describe 'ntp' do
                 'content' => /server \d.freebsd.pool.ntp.org iburst maxpoll 9/,
               })
             end
-          when 'ArchLinux'
-            it 'uses the ArchLinux NTP servers' do
+          when 'Archlinux'
+            it 'uses the Archlinux NTP servers' do
               should contain_file('/etc/ntp.conf').with({
                 'content' => /server \d.arch.pool.ntp.org/,
               })
@@ -740,6 +764,33 @@ describe 'ntp' do
             should_not contain_file('/etc/ntp.conf').with({
               'content' => /^tos/,
             })
+          end
+        end
+      end
+
+      describe 'pool' do
+        context 'when empty' do
+          let(:params) do
+            {
+                :pool => []
+            }
+          end
+
+          it 'should not contain a pool line' do
+            should contain_file('/etc/ntp.conf').without_content(/^pool/)
+          end
+        end
+
+        context 'set' do
+          let(:params) do
+            {
+                :pool => ['foo', 'bar'],
+            }
+          end
+
+          it 'should contain the pool lines' do
+            should contain_file('/etc/ntp.conf').with_content(/pool foo/)
+            should contain_file('/etc/ntp.conf').with_content(/pool bar/)
           end
         end
       end
