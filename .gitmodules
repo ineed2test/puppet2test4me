@@ -1,0 +1,3 @@
+[submodule "modules/accounts"]
+path = modules/accounts
+url = https://github.com/deric/puppet-accounts.git
