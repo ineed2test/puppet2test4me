@@ -30,7 +30,7 @@ apache::mod { 'security2': }
 # 1. copy .erb template
     file { '/etc/apache2/mods-available/security2.conf':
     ensure => 'file',
-    content => template('/etc/puppet/environments/staging/files/apache/security2.conf.erb'),
+    content => template('/etc/puppet/environments/test20170813/files/apache/security2.conf.erb'),
     owner   => 'root',
     group   => 'adm',
     mode    => '0755',
@@ -51,7 +51,7 @@ apache::mod { 'security2': }
 # create vhost File from template
     file { '/etc/apache2/sites-available/server.conf':
     ensure => 'file',
-    content => template('/etc/puppet/environments/staging/files/apache/firstvhost.conf.erb'),
+    content => template('/etc/puppet/environments/test20170813/files/apache/firstvhost.conf.erb'),
     owner   => 'root',
     group   => 'adm',
     mode    => '0777',
