@@ -23,7 +23,7 @@ class { 'apache': }
 #}
 
 # apache module / comment out to enable module / extra 'a2enmod' command need to link ../mod-enabled/<mod>.conf 
-apache::mod { 'ssl': }
+# apache::mod { 'ssl': }
 apache::mod { 'security2': }
 
 # modsecurity installation
