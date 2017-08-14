@@ -1,4 +1,4 @@
-moduledir '/etc/puppet/environments/staging/modules'
+moduledir '/etc/puppet/environments/test20170813/modules'
 
 mod 'puppetlabs/apache', :latest
 mod 'puppetlabs/haproxy', 'latest'
