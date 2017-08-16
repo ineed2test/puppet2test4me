@@ -28,7 +28,7 @@ classes:
 #   managehome: true
 
 accounts::users:
-  test8:
+  test7:
    ensure: 'absent'
    managehome: true
 
