@@ -27,7 +27,8 @@ classes:
 #   ensure: 'absent'
 #   managehome: true
 
-  test7
+accounts::users:
+test7
     comment: "John Test7"
     groups: ["sudo", "users"]
     shell: "/bin/bash"
