@@ -27,7 +27,6 @@ accounts::users:
    ensure: 'absent'
    managehome: true
 
-accounts::users:
   test6:
     comment: "John Test5"
     groups: ["sudo", "users"]
