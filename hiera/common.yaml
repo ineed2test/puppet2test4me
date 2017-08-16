@@ -8,7 +8,7 @@ classes:
   - sudo
   - sudo::configs
   - ntp
-  - '::accounts'
+#  - '::accounts'
 #  - hiera_users
 #  - kundea
 
