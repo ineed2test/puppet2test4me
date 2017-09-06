@@ -1,3 +1,3 @@
-[submodule "modules/accounts"]
-	path = modules/accounts
-	url = git://github.com/deric/puppet-accounts.git
+#[submodule "modules/accounts"]
+#	path = modules/accounts
+#	url = git://github.com/deric/puppet-accounts.git

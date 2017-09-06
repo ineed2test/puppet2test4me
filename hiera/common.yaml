@@ -1,14 +1,15 @@
 ---
 
-environment: test20170813
-puppet::agent::environment: test20170813
+environment: test20170816
+puppet::agent::environment: test20170816
 
 classes:
   - stdlib
   - sudo
   - sudo::configs
   - ntp
-#  - '::accounts'
+  - '::kundea'
+#  - '::accounts::admins'
 #  - hiera_users
 #  - kundea
 
@@ -18,7 +19,7 @@ classes:
 #    groups: ["sudo", "users"]
 #    shell: "/bin/bash"
 #    ssh_keys:
-#      'test@Christians-MacBook-Pro.local':
+#      'test@MacBook-Pro.local':
 #        type: 'ssh-rsa'
 #        key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4upCGf'
 
@@ -37,17 +38,30 @@ classes:
 #    groups: ["sudo", "users"]
 #    shell: "/bin/bash"
 #    ssh_keys:
-#      'test10@Christians-MacBook-Pro.local':
+#      'test10@MacBook-Pro.local':
 #        type: 'ssh-rsa'
 #        key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4upCGf'
 
 
-#admins:
-#'test':
-#    sshkeys:
-#      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4upCGf test@Christians-MacBook-Pro.local
-#    password: '!'
-#    uid: '1109'
+admins:
+  dreck:
+    sshkeys:
+      - AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4upCGf
+    password: '!'
+    uid: '1109'
+
+  dreck1:
+    sshkeys:
+      - AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4ugggg
+    password: '!'
+    uid: '1110'
+
+  dreck2:
+    sshkeys:
+      - AAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwdex4ugggg
+    password: '!'
+    uid: '1111'
+
 
 #users:
 #  test:

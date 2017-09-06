@@ -4,7 +4,7 @@
 
 #class { 'hiera_users': }
 #include hiera_users
-class datingcafebase {
-  class { '::datingcafebase::admins': }
-  include ::datingcafebase::logging
-}
+#class kundea {
+#  class { '::kundea::admins': }
+#  include ::kundea::logging
+#}

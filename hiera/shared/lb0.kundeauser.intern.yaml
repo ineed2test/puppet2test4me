@@ -1,0 +1,141 @@
+---
+
+classes:
+  - haproxy
+  - mycertfilemanagement
+  - keepalived
+
+files:
+  '/etc/keepalived/keepalivednotify.sh':
+    source: 'puppet:///modules/kundea/keepalivednotify.sh'
+#    mode: '0755'
+#    owner: 'root'
+#    group: 'root'
+
+keepalived::vrrp_script:
+  check_haproxy:
+    script: '/usr/bin/killall -0 haproxy'
+    no_weight: 'true'
+    interval: 2
+    fall: 2
+    rise: 2
+
+admins:
+  dreck11:
+    sshkeys:
+      - AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4upCGw
+    password: '!'
+    uid: '1126'
+
+haproxy::global_options:
+#ha_global_options:
+  log: /var/log local0 debug
+  chroot: /var/lib/haproxy
+  pidfile: /var/run/haproxy.pid
+  maxconn: 4006
+  user: haproxy
+  group: haproxy
+  daemon: ''
+  stats: 'socket /var/lib/haproxy/stats mode 0777 level operator'
+  tune.bufsize: '65536'
+  ssl-default-bind-ciphers: 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA'
+  ssl-default-bind-options: 'no-sslv3 no-tlsv10'
+  tune.ssl.default-dh-param: '2048'
+
+
+haproxy::defaults_options:
+  log: global
+  maxconn: 80076
+  option: redispatch
+  retries: 3
+  stats: enable
+#  timeout: http-request 10s
+#  timeout: queue 1m
+#  timeout: connect 10s
+  timeout: 
+    - 'connect 10s'
+    - 'http-request 10s'
+    - 'queue 1m'
+    - 'client 1m'
+    - 'server 1m'
+    - 'check 10s'
+
+haproxy::frontend:
+#funktioniert  'web1':
+#    bind: '192.168.1.10:81' !!! Note: $ports and $ipaddress cannot be used in combination with $bind. !!! https://forge.puppet.com/puppetlabs/haproxy !!!! 
+#    bind_options: accept-proxy
+#    mode: 'http'
+#    ports: '8081'
+#    options:
+#      balance: leastconn
+#      appsession: JSESSIONID len 16 timeout 300000
+
+haproxy::frontend:
+  'web0':
+    mode: http
+    ipaddress: '0.0.0.0'
+    ports: '443 ssl crt /etc/ssl/mycerts/www.kundeacombinedwithkey.pem crt /etc/ssl/mycerts/www.kundebcombinedwithkey.pem,80'
+    options:
+      balance: leastconn
+#     As of version 1.6, appsessions was removed. It is more flexible and more
+#  convenient to use stick-tables instead, and stick-tables support multi-master
+#  replication and data conservation across reloads, which appsessions did not.
+#      appsession: JSESSIONID len 16 timeout 300000
+      stick-table: type string len 16 size 5000k expire 300000
+      option:
+        - 'httplog'
+      acl:
+        - exampleIP src 193.19.36.0/24
+      http-request:
+        - deny if exampleIP
+      use_backend:
+        - web0
+      errorfile:
+        - '400 /var/loadbalancer_maintenance/index.html'
+        - '403 /var/loadbalancer_maintenance/index.html'
+        - '408 /var/loadbalancer_maintenance/index.html'
+        - '500 /var/loadbalancer_maintenance/index.html'
+        - '502 /var/loadbalancer_maintenance/index.html'
+        - '503 /var/loadbalancer_maintenance/index.html'
+        - '504 /var/loadbalancer_maintenance/index.html'
+
+haproxy::backend:
+  'web0':
+    collect_exported: false
+    options:
+      mode: http
+      balance: roundrobin
+      cookie: ServerID insert nocache indirect
+      http-request:
+        - add-header X-Forwarded-Proto https if { ssl_fc }
+        - add-header X-Forwarded-Proto http if !{ ssl_fc }
+      server:
+        - web01 192.168.1.10:81 check cookie web01
+        - web02 192.168.1.12:81 check cookie web02
+      option:
+        - 'httpchk HEAD /html/index.html HTTP/1.0\r\nHost:\ www.kundea.local:81'
+        - forwardfor
+
+haproxy::listen:
+  'stats':
+    ports: '9000'
+    mode: http
+    options:
+      stats:
+        - 'enable'
+        - 'uri /haproxy_stats'
+        - 'auth dreck:blah'
+#balancermember:
+#  'master00':
+#    listening_service: 'puppet00'
+#    server_names: 'master00.example.com'
+#    ipaddresses: '10.0.0.10'
+#    ports: '8140'
+
+mycertfilemanagement::certificates:
+#  name: 'kundea.de.combined.withkey.crt'
+#  combinedwithkey: 'kundea.de.combined.withkey.crt'
+  'title3':
+    combinedwithkey: 'www.kundeacombinedwithkey.pem'
+    anotherkey: 'www.kundebcombinedwithkey.pem'
+    anotherkeyitest: 'noexist.crt'

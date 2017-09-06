@@ -1,22 +1,29 @@
 ## define nodes with associated modules and distro packages
+#node default {
+#       include mycertfilemanagement
+#}
 
-node 'deb02.localdomain' {
-      include apache
-      class { 'mymotd': }
+#node 'deb03.localdomain' {
+#node default {
+#      class { 'mycertfilemanagement': }
+#       include mycertfilemanagement::certm['title1']
+#       include mycertfilemanagement
+#      include apache
+#      class { 'mymotd': }
 #      class {'::accounts':}
 #      class { 'hiera_users': }
 
 #      include git
 #      include apt     !!! notworking together with class 'apt'
       
-class {'apt':
-update => { 'frequency' => 'always' }
-}
+#class {'apt':
+#update => { 'frequency' => 'always' }
+#}
 
-$packages = ["libapache2-modsecurity","git"]
-package {
-$packages: ensure => installed,
-}
+#$packages = ["libapache2-modsecurity","git"]
+#package {
+#$packages: ensure => installed,
+#}
 
 #class git{
 #    include git::install
@@ -29,6 +36,6 @@ $packages: ensure => installed,
 #}
 
 
-}
+#}
 
 

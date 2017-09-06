@@ -1,0 +1,37 @@
+define mycertfilemanagement::certm(
+    $combinedfile = undef,
+    $keyfile = undef,
+    $combinedwithkey = undef,
+#    $filename = 'kundea.de.combined.withkey.crt',
+#    $certfile = "${filename}",
+    $ensure = 'present'
+  ) {
+
+  file {
+    '/etc/ssl/mycerts':
+      ensure  => 'directory',
+      require => Package[openssl],
+      purge   => true,
+      recurse => true,
+      force   => true;
+    '/etc/ssl/mycerts/zz_DIRECTORY_MANAGED_BY_PUPPET':
+      ensure  => present,
+      content => '
+
+    #######################################################################\r\n
+    ##                                                                   ##\r\n
+    ## This directory is managed by puppet! All changes will be deleted! ##\r\n
+    ##                                                                   ##\r\n
+    #######################################################################\r\n
+    ';
+
+    }
+
+  file {
+    "/etc/ssl/mycerts/${combinedwithkey}":
+      ensure  => $ensure,
+      source  => "puppet:///modules/mycertfilemanagement/files/${combinedwithkey}",
+      require => Package[openssl];
+  }
+
+}

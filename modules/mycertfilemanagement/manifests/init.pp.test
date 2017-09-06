@@ -1,0 +1,12 @@
+class mycertfilemanagement ( $certificates = {} ) {
+ 
+#  package { 'openssl':
+#    ensure => 'installed'
+#  }
+
+  package { 'openssl':
+    ensure => present,
+  } ->
+
+  create_resources('mycertfilemanagement::certm', $certificates)
+}

@@ -1,0 +1,36 @@
+# create a class with parameter without hiera
+# create a directory /etc/ssl/mycerts
+# copy a cert file /modules/mycertfilemanagement/files/kundea.de.combined.withkey.crt to /etc/ssl/mycerts
+# create a file /etc/ssl/mycerts/zz_DIRECTORY_MANAGED_BY_PUPPET
+class mycertfilemanagement (String $combinedwithkey = 'kundea.de.combined.withkey.crt') {
+  file {
+    '/etc/ssl/mycerts':
+      ensure  => 'directory',
+      purge   => true,
+      recurse => true,
+      force   => true;
+      '/etc/ssl/mycerts/zz_DIRECTORY_MANAGED_BY_PUPPET':
+      ensure  => present,
+      content => '
+
+    #######################################################################\r\n
+    ##                                                                   ##\r\n
+    ## This directory is managed by puppet! All changes will be deleted! ##\r\n
+    ##                                                                   ##\r\n
+    #######################################################################\r\n
+    ';
+
+}
+
+    package { 'openssl':
+      provider => apt,
+      ensure => 'installed'
+      }
+
+    file {
+      "/etc/ssl/mycerts/${combinedwithkey}":
+        ensure  => $ensure,
+        source  => "puppet:///modules/mycertfilemanagement/${combinedwithkey}"
+#        !!! not okay source  => "puppet:///modules/mycertfilemanagement/files/${combinedwithkey}"
+    }
+}

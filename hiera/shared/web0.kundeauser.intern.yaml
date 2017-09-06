@@ -1,0 +1,31 @@
+---
+
+classes:
+#  - mycertfilemanagement
+  - apache
+  - apache::mod::alias
+
+#admins:
+#  dreck11:
+#    sshkeys:
+#      - AAAAB3NzaC1yc2EAAAADAQABAAABAQC1lZU7S+1n7lXxK04d68NK3IMQ5SHryWNN73BPo5ZzkQFY8Hv1F9cUEVGB7RR4XTEp0jTJzk9L00Bx6wPuROTG/sH+6ksNw32/cp+gVxF05oPpqJcGV52m3sH3uZvFAuTzY+3RJwmXk1/2WeSPPd2qDA74/6bkBjDUglQLFnyMi51hbHx3qKjXZDnzUmuVnLS472NoGVb00vxKZUU/PLCk65P50VXZhwW8augySsIjZ0olUrwmlR/vcZ7mS7kyWb1QsP31BmUQAEH5MwJ2s236F2re3O5DF8bEjsfVKRXETV1WOLHIg/6625Tu3o2OBjdpXxq/RQNpdxwd2x4upCGw
+#    password: '!'
+#    uid: '1126'
+
+apache::vhost:
+  'www.kundea.local':
+    vhost_name: '*'
+    serveraliases: 'm.kundea.local'
+    port: 81
+    aliases:
+      -
+        alias: /media/foto 
+        path: /home/kundea/upload/foto 
+      -
+        alias: /media/docs 
+        path: /home/kundea/upload/docs
+    docroot: '/var/www/'
+    docroot_owner: www-data
+    docroot_group: www-data
+    options: '-Indexes -FollowSymLinks -MultiViews'
+
