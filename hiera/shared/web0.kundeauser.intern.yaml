@@ -36,3 +36,13 @@ apache::vhost:
 
       - rewrite_rule: ^(.*)$ https://m.kundea.de/kundea/mobile$1 [R=301,L]
         rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
+    jk_mounts:
+      -
+        mount: /kundea
+        worker: workerkundea
+      -
+        mount: /kundea/*
+        worker: workerkundea
+      -
+        unmount: /kundea/css/*
+        worker: workerkundea
