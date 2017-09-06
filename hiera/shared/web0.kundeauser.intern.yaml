@@ -33,3 +33,6 @@ apache::vhost:
           # See https://tickets.puppetlabs.com/browse/HI-127
       - rewrite_rule: "^/?(.*) https://%%{THIS_DOESNT_EXIST}{SERVER_NAME}/$1 [R=301,L]"
         rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
+
+      - RewriteRule: ^(.*)$ https://m.kundea.de/kundea/mobile$1 [R=301,L]
+        rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
