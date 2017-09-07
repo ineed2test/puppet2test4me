@@ -1,7 +1,8 @@
 moduledir '/etc/puppet/environments/test20170813/modules'
 
 mod 'arioch/keepalived', :latest
-mod 'puppetlabs/apache', :latest
+#mod 'puppetlabs/apache', :latest
+mod 'puppetlabs/apache', :git => 'https://github.com/puppetlabs/puppetlabs-apache.git'
 mod 'saz/sudo', :latest
 mod 'puppetlabs/apt', :latest
 mod 'puppetlabs/stdlib', :latest
