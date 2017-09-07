@@ -71,5 +71,5 @@ create_resources('haproxy::listen', $haproxy_listen)
 $apache_vhost = hiera('apache::vhost', {})
 create_resources('apache::vhost', $apache_vhost)
 
-#$apache_mod_jk = hiera('apache::mod::jk', {})
-#create_resources('apache::mod::jk', $apache_mod_jk)
+$apache_mod_jk = hiera('apache::mod::jk', {})
+create_resources('apache::mod::jk', $apache_mod_jk)
