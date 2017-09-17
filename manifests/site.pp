@@ -75,7 +75,7 @@ $apache_mod_jk = hiera('apache::mod::jk', {})
 create_resources('apache::mod::jk', $apache_mod_jk)
 
 #package
-$packages = hiera_hash('packages', {})
+$packages = hiera('packages', {})
 create_resources('package', $packages)
 
 #$apache_mod_jk = hiera('apache::mod', {})
