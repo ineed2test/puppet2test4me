@@ -14,7 +14,7 @@ classes:
 #    uid: '1126'
 
 apache::mod::jk:
-    workers_file: /etc/workers.properties
+#    workers_file: /etc/workers.properties
 #    workers_file_content:
 #       worker_lists: workerkundea
 #       some_name:
