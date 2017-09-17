@@ -14,13 +14,14 @@ classes:
 #    uid: '1126'
 
 ::apache::mod::jk:
+     workers_file: '/etc/workers.properties'
 #    port: 81
-    workers_file_content:
-       worker_lists: workerkundea
-       some_name:
-         port: 8009
-         type: ajp13
-         host: localhost
+#    workers_file_content:
+#       worker_lists: workerkundea
+#       some_name:
+#         port: 8009
+#         type: ajp13
+#         host: localhost
 apache::vhost:
   'www.kundea.local':
     vhost_name: '*'
