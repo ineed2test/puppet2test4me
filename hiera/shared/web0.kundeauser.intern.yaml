@@ -17,8 +17,9 @@ classes:
 #apache::mod::jk:ip: '192.168.2.15'
 #  port: '9081'
 
-packages_present:
-  - libapache2-mod-jk
+package:
+  'libapache2-mod-jk':
+    ensure: present
 
 apache::mod::jk:
   workers_file: /etc/workers.properties

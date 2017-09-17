@@ -11,6 +11,7 @@ classes:
   - '::kundea'
   - apt
   - apt::backports
+  - package
 #  - '::accounts::admins'
 #  - hiera_users
 #  - kundea
