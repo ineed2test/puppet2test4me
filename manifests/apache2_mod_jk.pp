@@ -6,5 +6,5 @@ class { '::apache::mod::jk':
   shm_size => '50M',
   workers_file_content => {
       worker.list = some_name
-  },
+  }
 }
