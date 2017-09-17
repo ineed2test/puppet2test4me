@@ -5,6 +5,6 @@ class { '::apache::mod::jk':
   shm_file     = 'run/jk.shm',
   shm_size     = '50M',
   $workers_file_content = {
-    <Content>
+      worker.list = some_name
   },
 }
