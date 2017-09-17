@@ -19,7 +19,7 @@ classes:
 
 packages:
   libapache2-mod-jk:
-    ensure: installed
+    ensure: present
 
 apache::mod::jk:
   workers_file: /etc/workers.properties
