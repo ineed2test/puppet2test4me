@@ -18,7 +18,7 @@ classes:
 #  port: '9081'
 
 packages_present:
-  - 'libapache2-mod-jk'
+  - libapache2-mod-jk
 
 apache::mod::jk:
   workers_file: /etc/workers.properties
