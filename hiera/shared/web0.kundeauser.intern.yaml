@@ -18,8 +18,8 @@ classes:
 #  port: '9081'
 
 packages:
-  'libapache2-mod-jk':
-    ensure: present
+  libapache2-mod-jk:
+    ensure: installed
 
 apache::mod::jk:
   workers_file: /etc/workers.properties
