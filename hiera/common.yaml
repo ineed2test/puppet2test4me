@@ -9,6 +9,7 @@ classes:
   - sudo::configs
   - ntp
   - '::kundea'
+  - packages::manage
 #  - '::accounts::admins'
 #  - hiera_users
 #  - kundea

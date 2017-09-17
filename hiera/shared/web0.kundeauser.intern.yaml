@@ -16,7 +16,12 @@ classes:
 #apache::mod::jk:
 #apache::mod::jk:ip: '192.168.2.15'
 #  port: '9081'
-apache::mod::jk:workers_file: /etc/workers.properties
+
+packages::install:
+  - 'libapache2-mod-jk'
+
+apache::mod::jk:
+  workers_file: /etc/workers.properties
 #    workers_file_content:
 #       worker_lists: workerkundea
 #       some_name:
