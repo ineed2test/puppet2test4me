@@ -17,7 +17,7 @@ classes:
 #apache::mod::jk:ip: '192.168.2.15'
 #  port: '9081'
 
-package:
+packages:
   'libapache2-mod-jk':
     ensure: present
 
