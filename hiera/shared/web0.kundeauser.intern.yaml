@@ -15,6 +15,7 @@ classes:
 
 #apache::mod::jk:
 apache::mod::jk:ip: '192.168.2.15'
+apache::mod::jk:workers_file_content: 'worker.list=workerkundea'
 #  port: '9081'
 
 packages:
