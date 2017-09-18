@@ -4,7 +4,7 @@ classes:
 #  - mycertfilemanagement
   - apache
   - apache::mod::alias
-  - apache::mod::jk
+  - ::apache::mod::jk
 
 #admins:
 #  dreck11:
@@ -21,9 +21,9 @@ packages:
   libapache2-mod-jk:
     ensure: present
 
-apache::mod::jk:
-#  workers_file: '/etc/workers.properties'
-    workers_file_content:
+::apache::mod::jk:
+  workers_file: '/etc/workers.properties'
+#    workers_file_content:
 #       worker_lists: workerkundea
 #       some_name:
 #         port: 8009
