@@ -21,9 +21,17 @@ classes:
 #  workers_file: /etc/workers.properties
 #  port: '9081'
 
+# mod_jk installation
 packages:
   libapache2-mod-jk:
     ensure: present
+
+files:
+  '/tmp/test'
+  source: 'puppet:///onlytest'
+  mode: '0777'
+  owner: 'dreck11'
+  group: 'dreck11'
 
 #apache::mod::jk:
 #  workers_file: '/etc/workers.properties'
