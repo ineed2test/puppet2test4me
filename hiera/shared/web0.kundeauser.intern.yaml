@@ -21,14 +21,14 @@ classes:
 #  workers_file: /etc/workers.properties
 #  port: '9081'
 
-# mod_jk installation
+# mod_jk installation.
 packages:
   libapache2-mod-jk:
     ensure: present
-
+#    puppet:///modules/<MODULE NAME>/<FILE PATH>
 files:
-  '/etc/libapache2-mod-jk/workers.properties.test':
-    source: 'puppet:///apache/workers.properties'
+  '/etc/libapache2-mod-jk/workers.properties':
+    source: 'puppet:///module/kundea/workers.properties'
 #  mode: '0777'
 #  owner: 'dreck11'
 #  group: 'dreck11'
