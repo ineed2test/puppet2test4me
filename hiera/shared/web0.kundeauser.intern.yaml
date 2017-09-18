@@ -14,9 +14,9 @@ classes:
 #    uid: '1126'
 
 apache::mod::jk:
-ip: '192.168.2.15'
-workers_file_content: 'worker.list=workerkundea'
-workers_file: /etc/workers.properties
+  ip: '192.168.2.15'
+  workers_file_content: 'worker.list=workerkundea'
+  workers_file: /etc/workers.properties
 #  port: '9081'
 
 packages:
