@@ -4,7 +4,7 @@ classes:
 #  - mycertfilemanagement
   - apache
   - apache::mod::alias
-#  - apache::mod::jk
+  - apache::mod::jk
 
 #admins:
 #  dreck11:
@@ -14,7 +14,7 @@ classes:
 #    uid: '1126'
 
 #apache::mod::jk:
-#apache::mod::jk:ip: '192.168.2.15'
+apache::mod::jk:ip: '192.168.2.15'
 #  port: '9081'
 
 packages:
