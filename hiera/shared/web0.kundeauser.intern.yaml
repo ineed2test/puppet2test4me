@@ -28,7 +28,7 @@ packages:
 
 files:
   '/etc/libapache2-mod-jk/workers.properties':
-  source: 'puppet:///files/workers.properties.erb'
+    source: 'puppet:///files/workers.properties.erb'
 #  mode: '0777'
 #  owner: 'dreck11'
 #  group: 'dreck11'
