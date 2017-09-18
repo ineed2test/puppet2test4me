@@ -27,7 +27,7 @@ packages:
     ensure: present
 
 files:
-  '/tmp/test'
+  '/tmp/test':
   source: 'puppet:///onlytest'
   mode: '0777'
   owner: 'dreck11'
