@@ -1,7 +1,7 @@
 moduledir '/etc/puppet/environments/test20170813/modules'
 
 mod 'puppetlabs/apache', :latest
-mod 'puppetlabs/haproxy', 'latest'
+mod 'puppetlabs/haproxy', :latest
 mod 'saz/sudo', :latest
 mod 'puppetlabs/apt', :latest
 mod 'puppetlabs/stdlib', :latest
