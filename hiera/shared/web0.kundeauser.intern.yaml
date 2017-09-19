@@ -61,7 +61,8 @@ apache::mod::security::activated_rules:
   - 'rules/REQUEST-910-IP-REPUTATION.conf'
   - 'rules/REQUEST-911-METHOD-ENFORCEMENT.conf'
   - 'rules/REQUEST-912-DOS-PROTECTION.conf'
-  - 'rules/REQUEST-913-SCANNER-DETECTION.conf'
+# Syntax Error  Syntax error on line 59 of /etc/modsecurity/activated_rules/REQUEST-913-SCANNER-DETECTION.conf
+#  - 'rules/REQUEST-913-SCANNER-DETECTION.conf'
   - 'rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf'
   - 'rules/REQUEST-921-PROTOCOL-ATTACK.conf'
   - 'rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf'
