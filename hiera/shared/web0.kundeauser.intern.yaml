@@ -33,6 +33,8 @@ files:
 #  owner: 'dreck11'
 #  group: 'dreck11'
 
+ apache::mpm_module: worker
+
 #apache::mod::jk:
 #  workers_file: '/etc/workers.properties'
 #    workers_file_content:
