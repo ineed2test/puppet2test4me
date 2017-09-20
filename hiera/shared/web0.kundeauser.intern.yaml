@@ -55,7 +55,7 @@ packages:
     ensure: present
 
 # service running to start at systemboot
-service:
+services:
   tomcat:
     ensure: true
     enable: true

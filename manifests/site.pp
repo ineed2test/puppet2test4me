@@ -89,5 +89,9 @@ create_resources('package', $packages)
 $hosts = hiera('hosts', {})
 create_resources('host', $hosts)
 
+#service
+$services = hiera('services', {})
+create_resources('service', $services)
+
 #$apache_mod_jk = hiera('apache::mod', {})
 #create_resources('apache::mod', $apache_mod_jk)
