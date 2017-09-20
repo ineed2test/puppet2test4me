@@ -78,5 +78,9 @@ create_resources('apache::mod::jk', $apache_mod_jk)
 $packages = hiera('packages', {})
 create_resources('package', $packages)
 
+# host /etc/hosts
+$hosts = hiera('hosts', {})
+create_resources('host', $hosts)
+
 #$apache_mod_jk = hiera('apache::mod', {})
 #create_resources('apache::mod', $apache_mod_jk)

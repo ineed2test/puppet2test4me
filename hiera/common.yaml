@@ -11,8 +11,8 @@ classes:
   - '::kundea'
   - apt
 
-host:
-  'deb 03.localdomain':
+hosts:
+  'deb03.localdomain':
     ip: '192.168.1.10'
 
 # set /etc/apt/sources.list.d/backports.list
