@@ -45,10 +45,14 @@ users:
 #    group: kundea
 #    mode: '0755'
 
-# mod_jk installation.
+# mod_jk + openjdk 7 installation.
 packages:
   libapache2-mod-jk:
     ensure: present
+
+  openjdk-7-jdk:
+    ensure: present
+
 #    puppet:///modules/<MODULE NAME>/<FILE PATH>
 files:
   '/etc/libapache2-mod-jk/workers.properties':
