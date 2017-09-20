@@ -11,7 +11,7 @@ classes:
   - '::kundea'
   - apt
 
-hosts:
+host:
   www1:
     name: deb03.localdomain
     ip: 192.168.1.10
