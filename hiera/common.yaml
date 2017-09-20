@@ -1,7 +1,7 @@
 ---
 
-#environment: test20170919
-#puppet::agent::environment: test20170919
+environment: test20170919
+puppet::agent::environment: test20170919
 
 classes:
   - stdlib
@@ -81,8 +81,8 @@ admins:
 #      - adm
 #    password: 'SuperSecretpasswordhash'
 
- host:
-   www1:
-     name: deb03.localdomain
-     ip: 192.168.1.10
-     ensure: present
+host:
+  www1:
+    name: deb03.localdomain
+    ip: 192.168.1.10
+    ensure: present
