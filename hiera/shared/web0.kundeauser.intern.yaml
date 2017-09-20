@@ -45,13 +45,20 @@ users:
 #    group: kundea
 #    mode: '0755'
 
-# mod_jk + openjdk 7 installation.
+# Packages Installation
+# mod_jk + openjdk 7
 packages:
   libapache2-mod-jk:
     ensure: present
 
   openjdk-8-jdk:
     ensure: present
+
+# service running to start at systemboot
+service:
+  tomcat:
+    ensure: true
+    enable: true
 
 #    puppet:///modules/<MODULE NAME>/<FILE PATH>
 files:
