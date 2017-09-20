@@ -6,6 +6,7 @@ classes:
   - apache::mod::alias
   - apache::mod::jk
   - apache::mod::security
+  - tomcat
 #admins:
 #  dreck11:
 #    sshkeys:
@@ -159,3 +160,12 @@ apache::vhost:
       -
         unmount: /kundea/css/*
         worker: workerkundea
+
+#tomcat
+tomcat_install:
+  '/home/kundea/tomcat':
+    source_url: 'http://www-eu.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz'
+
+tomcat_instance:
+  default:
+    catalina_home: /home/kundea/tomcat
