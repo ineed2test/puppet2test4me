@@ -1,7 +1,7 @@
 ---
 
-environment: test20170919
-puppet::agent::environment: test20170919
+#environment: test20170919
+#puppet::agent::environment: test20170919
 
 classes:
   - stdlib
