@@ -10,21 +10,17 @@ classes:
   - ntp
   - '::kundea'
   - apt
-
-host:
-  www1:
-    name: deb03.localdomain
-    ip: 192.168.1.10
-    ensure: present
-##    target: /etc/hosts
-###    host_aliases: deb03
-
-# set /etc/apt/sources.list.d/backports.list
   - apt::backports
 #  - '::accounts::admins'
 #  - hiera_users
 #  - kundea
 
+
+ host:
+   www1:
+     name: deb03.localdomain
+     ip: 192.168.1.10
+     ensure: present
 #accounts::users:
 #  test:
 #    comment: "John Test"
