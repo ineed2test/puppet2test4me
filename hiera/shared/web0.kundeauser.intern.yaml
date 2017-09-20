@@ -27,6 +27,15 @@ classes:
 #    ip: 192.168.1.10
 #    ensure: present
 
+# create user kundea without ssh access and password
+users:
+  user1:
+    name: kundea
+    home: /home/kundea
+    uid: 4711
+    ensure: present
+    shell: /bin/bash
+
 # mod_jk installation.
 packages:
   libapache2-mod-jk:

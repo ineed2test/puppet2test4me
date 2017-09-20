@@ -81,7 +81,7 @@ admins:
 #      - adm
 #    password: 'SuperSecretpasswordhash'
 
-# set /etc/hostname puppet master is set already
+# set /etc/hosts puppet master is set already
 hosts:
   deb03:
     name: deb03.localdomain
