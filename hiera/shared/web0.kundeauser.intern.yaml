@@ -27,7 +27,7 @@ classes:
 #    ip: 192.168.1.10
 #    ensure: present
 
-# create user kundea without ssh access and password
+# create user kundea without ssh access and password and home directory
 users:
   user1:
     name: kundea
@@ -35,6 +35,13 @@ users:
     uid: 4711
     ensure: present
     shell: /bin/bash
+files:
+  directory1:
+    present: directory
+    path: /home/kundea
+    owner: kundea
+    group: kundea
+    mode: '0755'
 
 # mod_jk installation.
 packages:
