@@ -81,8 +81,14 @@ admins:
 #      - adm
 #    password: 'SuperSecretpasswordhash'
 
+# set /etc/hostname
 host:
-  www1:
+  deb03:
     name: deb03.localdomain
     ip: 192.168.1.10
+    ensure: present
+
+  deb04:
+    name: deb04.localdomain
+    ip: 192.168.1.12
     ensure: present
