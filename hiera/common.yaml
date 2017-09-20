@@ -11,12 +11,12 @@ classes:
   - '::kundea'
   - apt
 
-host:
-  www1:
-    name: deb03.localdomain
-    ip: 192.168.1.10
-    ensure: present
-#    target: /etc/hosts
+#host:
+#  www1:
+#    name: deb03.localdomain
+#    ip: 192.168.1.10
+#    ensure: present
+##    target: /etc/hosts
 ###    host_aliases: deb03
 
 # set /etc/apt/sources.list.d/backports.list

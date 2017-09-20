@@ -21,6 +21,12 @@ classes:
 #  workers_file: /etc/workers.properties
 #  port: '9081'
 
+host:
+  www1:
+    name: deb03.localdomain
+    ip: 192.168.1.10
+    ensure: present
+
 # mod_jk installation.
 packages:
   libapache2-mod-jk:
