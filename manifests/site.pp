@@ -76,10 +76,10 @@ create_resources('apache::mod::jk', $apache_mod_jk)
 
 #tomcat
 $tomcat_install = hiera('tomcat_install', {})
-create_resources(' tomcat::install', $tomcat_install)
+create_resources('tomcat::install', $tomcat_install)
 
 $tomcat_instance = hiera('tomcat_instance', {})
-create_resources(' tomcat::instance', $tomcat_instance)
+create_resources('tomcat::instance', $tomcat_instance)
 
 #package
 $packages = hiera('packages', {})
