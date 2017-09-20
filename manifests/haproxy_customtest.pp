@@ -12,7 +12,7 @@
 #      'balance'    => 'roundrobin'
 #    },
 #  }
-node 'deb3.localdomain' {
+node 'default' {
 host { 'deb03.localdomain':
   ensure       => 'present',
   host_aliases => ['deb03'],
