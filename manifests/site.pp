@@ -79,7 +79,7 @@ $packages = hiera('packages', {})
 create_resources('package', $packages)
 
 # host /etc/hosts
-$hosts = hiera_hash('hosts', {})
+$hosts = hiera('hosts', {})
 create_resources('host', $hosts)
 
 #$apache_mod_jk = hiera('apache::mod', {})
