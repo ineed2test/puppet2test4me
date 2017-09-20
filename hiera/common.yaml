@@ -10,6 +10,11 @@ classes:
   - ntp
   - '::kundea'
   - apt
+
+host:
+  'deb 03.localdomain':
+    ip: '192.168.1.10'
+
 # set /etc/apt/sources.list.d/backports.list
   - apt::backports
 #  - '::accounts::admins'
