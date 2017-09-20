@@ -12,7 +12,7 @@ classes:
   - apt
 
 hosts:
-  'deb03localdomain':
+  'deb03localdomain'
     name: deb03.localdomain
     ip: '192.168.1.10'
     ensure: present
