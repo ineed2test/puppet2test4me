@@ -37,7 +37,7 @@ users:
     shell: /bin/bash
 files:
   '/home/kundea':
-    present: directory
+    ensure: directory
     path: /home/kundea
     owner: kundea
     group: kundea
