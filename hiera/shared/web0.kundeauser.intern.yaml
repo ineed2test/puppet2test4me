@@ -59,7 +59,7 @@ files:
     path: /home/kundea
     owner: kundea
     group: kundea
-    mode: '0755'
+    mode: 0755
 # diverse apache settings
 apache::mpm_module: prefork
 apache::server_tokens: Prod
