@@ -35,13 +35,13 @@ users:
     uid: 4711
     ensure: present
     shell: /bin/bash
-files:
-  '/home/kundea':
-    ensure: directory
-    path: /home/kundea
-    owner: kundea
-    group: kundea
-    mode: '0755'
+#files:
+#  '/home/kundea':
+#    ensure: directory
+#    path: /home/kundea
+#    owner: kundea
+#    group: kundea
+#    mode: '0755'
 
 # mod_jk installation.
 packages:
@@ -51,10 +51,15 @@ packages:
 files:
   '/etc/libapache2-mod-jk/workers.properties':
     source: 'puppet:///modules/kundea/workers.properties'
-#  mode: '0777'
-#  owner: 'dreck11'
-#  group: 'dreck11'
-
+  mode: 0777
+  owner: dreck11
+  group: dreck11
+  '/home/kundea':
+    ensure: directory
+    path: /home/kundea
+    owner: kundea
+    group: kundea
+    mode: '0755'
 # diverse apache settings
 apache::mpm_module: prefork
 apache::server_tokens: Prod
