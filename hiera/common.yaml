@@ -13,7 +13,7 @@ classes:
 
 hosts:
   deb03localdomain:
-#    ip: '192.168.1.10'
+    ip: 192.168.1.10
 
 # set /etc/apt/sources.list.d/backports.list
   - apt::backports
