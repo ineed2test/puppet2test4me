@@ -14,13 +14,6 @@ classes:
 #  - '::accounts::admins'
 #  - hiera_users
 #  - kundea
-
-
- host:
-   www1:
-     name: deb03.localdomain
-     ip: 192.168.1.10
-     ensure: present
 #accounts::users:
 #  test:
 #    comment: "John Test"
@@ -87,3 +80,9 @@ admins:
 #      - sudo
 #      - adm
 #    password: 'SuperSecretpasswordhash'
+
+ host:
+   www1:
+     name: deb03.localdomain
+     ip: 192.168.1.10
+     ensure: present
