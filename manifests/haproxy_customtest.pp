@@ -12,3 +12,10 @@
 #      'balance'    => 'roundrobin'
 #    },
 #  }
+
+#host { 'deb03.localdomain':
+#  ensure       => 'present',
+#  host_aliases => ['deb03'],
+#  ip           => '192.168.1.10',
+#  target       => '/etc/hosts',
+#}
