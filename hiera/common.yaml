@@ -81,8 +81,8 @@ admins:
 #      - adm
 #    password: 'SuperSecretpasswordhash'
 
-# set /etc/hostname
-host:
+# set /etc/hostname puppet master is set already
+hosts:
   deb03:
     name: deb03.localdomain
     ip: 192.168.1.10
@@ -91,4 +91,9 @@ host:
   deb04:
     name: deb04.localdomain
     ip: 192.168.1.12
+    ensure: present
+
+  deb01:
+    name: deb01.localdomain
+    ip: 192.168.1.7
     ensure: present

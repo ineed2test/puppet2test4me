@@ -12,6 +12,8 @@
 #      'balance'    => 'roundrobin'
 #    },
 #  }
+
+# test to add host entry
 #node 'default' {
 #host { 'deb03.localdomain':
 #  ensure       => 'present',
@@ -20,3 +22,4 @@
 #  target       => '/etc/hosts',
 #}
 #}
+
