@@ -30,13 +30,13 @@ classes:
 #    ensure: present
 
 # create user kundea without ssh access and password and home directory
-users:
-  user1:
-    name: kundea
-    home: /home/kundea
-    uid: 4711
-    ensure: present
-    shell: /bin/bash
+#users:
+#  user1:
+#    name: kundea
+#    home: /home/kundea
+#    uid: 4711
+#    ensure: present
+#    shell: /bin/bash
 #files:
 #  '/home/kundea':
 #    ensure: directory
