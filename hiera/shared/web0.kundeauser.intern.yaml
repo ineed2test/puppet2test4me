@@ -196,9 +196,9 @@ tomcat_instance:
     user: kundea
     group: kundea
 tomcat_config_server_connector:
- AJP:
-   port: 7081
-   protocol: AJP/1.3
+  AJP:
+    port: 7081
+    protocol: AJP/1.3
 
 # exec important commands
 execs:
