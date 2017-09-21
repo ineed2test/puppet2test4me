@@ -195,3 +195,10 @@ tomcat_instance:
     catalina_home: /home/kundea/tomcat
     user: kundea
     group: kundea
+
+
+# exec important commands
+exec:
+  'usermod change user kundea UID':
+    command: 'usermod -u 4711 kundea'
+    user: root
