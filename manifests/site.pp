@@ -81,10 +81,10 @@ create_resources('tomcat::install', $tomcat_install)
 $tomcat_instance = hiera('tomcat_instance', {})
 create_resources('tomcat::instance', $tomcat_instance)
 
-$tomcat_config_server = hiera('tomcat_config_server' {})
+$tomcat_config_server = hiera('tomcat_config_server', {})
 create_resources('tomcat::config::server', $tomcat_config_server)
 
-$tomcat_config_server_connector = hiera('tomcat_config_server_connector' {})
+$tomcat_config_server_connector = hiera('tomcat_config_server_connector', {})
 create_resources('tomcat::config::server::connector', $tomcat_config_server_connector)
 
 #package
