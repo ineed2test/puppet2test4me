@@ -203,7 +203,7 @@ tomcat_config_server_connector:
     protocol: 'AJP/1.3'
     purge_connectors: true
     additional_attributes:
-      -  maxThreads="750"
+      -  maxThreads=750
 
 # exec important commands
 execs:
