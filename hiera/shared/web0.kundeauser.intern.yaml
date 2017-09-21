@@ -202,6 +202,12 @@ tomcat_config_server_connector:
     port: '7081'
     protocol: 'AJP/1.3'
 
+  ajpdefault:
+    catalina_base: /home/kundea/tomcat
+    connector_ensure: absent
+    port: '8009'
+    protocol: 'AJP/1.3'
+
 # exec important commands
 execs:
   'usermod change user kundea UID':
