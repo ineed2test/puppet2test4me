@@ -1,0 +1,20 @@
+[Unit]
+Description=Tomcat binary version
+After=rsyslog.service
+After=networking.service
+
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=kundea
+Group=kundea
+PrivateTmp=yes
+
+
+ExecStart=/home/kundea/tomcat/bin/startup.sh
+
+ExecStop=/home/kundea/tomcat/bin/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target

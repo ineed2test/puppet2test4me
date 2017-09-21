@@ -67,6 +67,17 @@ files:
     mode:  u=rwx,g=rw,o=rw
     owner: root
     group: root
+
+  '/lib/systemd/system/tomcat.service':
+    source: 'puppet:///modules/kundea/tomcat-systemd-unit'
+    mode:  u=rwx,g=rw,o=rw
+    owner: root
+    group: root
+
+  '/etc/systemd/system/multi-user.target.wants/tomcat.service':
+    ensure: link
+    target: lib/systemd/system/tomcat.service
+
   '/home/kundea':
     ensure: directory
     path: /home/kundea
