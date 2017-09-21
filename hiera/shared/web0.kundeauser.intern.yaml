@@ -200,5 +200,5 @@ tomcat_instance:
 # exec important commands
 execs:
   'usermod change user kundea UID':
-    command: '/usr/sbin/usermod -u 4711 kundea'
+    command: '/usr/sbin/service tomcat stop && /usr/sbin/usermod -u 4711 kundea && /usr/sbin/service tomcat start'
     user: root
