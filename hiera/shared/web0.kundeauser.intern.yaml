@@ -202,7 +202,8 @@ tomcat_config_server_connector:
     port: '7081'
     protocol: 'AJP/1.3'
     purge_connectors: true
-    additional_attributes: 'maxThreads="750"'
+    additional_attributes:
+      - maxThreads
 
 # exec important commands
 execs:
