@@ -202,8 +202,14 @@ tomcat_config_server_connector:
     port: '7081'
     protocol: 'AJP/1.3'
     purge_connectors: true
+# additional_attributes must be set as hash
     additional_attributes:
-      maxThreads: 555
+# same value as apache maxrequestworkers, note that default 250 is per cpu core
+      maxThreads: 750
+      minSpareThreads: 150
+      acceptCount: 200
+      redirectPort: 8443
+
 
 # exec important commands
 execs:
