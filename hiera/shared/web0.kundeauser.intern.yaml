@@ -196,7 +196,7 @@ tomcat_instance:
     user: kundea
     group: kundea
 tomcat_config_server_connector:
- 'AJP':
+ AJP:
    port: 7081
    protocol: AJP/1.3
 
