@@ -29,7 +29,7 @@ classes:
 #    ip: 192.168.1.10
 #    ensure: present
 
-# create user kundea without ssh access and password and home directory
+# create user kundea without ssh access and password and home directory !!! user kundea is already create by tomcat::install
 #users:
 #  user1:
 #    name: kundea
