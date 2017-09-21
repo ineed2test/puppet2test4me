@@ -198,7 +198,7 @@ tomcat_instance:
 
 
 # exec important commands
-exec:
+execs:
   'usermod change user kundea UID':
     command: 'usermod -u 4711 kundea'
     user: root
