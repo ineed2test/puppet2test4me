@@ -198,7 +198,7 @@ tomcat_instance:
 tomcat_config_server_connector:
   AJP:
     port: 7081
-    protocol: AJP/1.3
+    protocol: 'AJP/1.3'
 
 # exec important commands
 execs:
