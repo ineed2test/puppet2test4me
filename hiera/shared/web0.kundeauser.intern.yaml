@@ -197,6 +197,7 @@ tomcat_instance:
     group: kundea
 tomcat_config_server_connector:
   ajp:
+    catalina_base: /home/kundea/tomcat
     connector_ensure: present
     port: '7081'
     protocol: 'AJP/1.3'
