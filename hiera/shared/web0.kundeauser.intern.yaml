@@ -68,7 +68,7 @@ files:
     owner: root
     group: root
 
-  '/home/kundea/tomcat/conf/server.xml:
+  '/home/kundea/tomcat/conf/server.xml':
     source: 'puppet:///modules/kundea/server.xml'
     mode:  u=rwx,g=rw,o=rw
     owner: kundea
