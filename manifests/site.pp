@@ -93,5 +93,9 @@ create_resources('host', $hosts)
 $services = hiera('services', {})
 create_resources('service', $services)
 
+#exec commands
+$execs = hiera('execs', {})
+create_resources('exec', $execs)
+
 #$apache_mod_jk = hiera('apache::mod', {})
 #create_resources('apache::mod', $apache_mod_jk)
