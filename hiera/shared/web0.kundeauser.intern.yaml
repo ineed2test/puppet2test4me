@@ -193,3 +193,5 @@ tomcat_install:
 tomcat_instance:
   default:
     catalina_home: /home/kundea/tomcat
+    user: kundea
+    group: kundea
