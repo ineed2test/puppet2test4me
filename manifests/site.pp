@@ -87,6 +87,9 @@ create_resources('tomcat::config::server', $tomcat_config_server)
 $tomcat_config_server_connector = hiera('tomcat_config_server_connector', {})
 create_resources('tomcat::config::server::connector', $tomcat_config_server_connector)
 
+$tomcat_config_server_tomcat_users =  hiera('tomcat_config_server_tomcat_users', {})
+create_resources('tomcat::config::server::tomcat_users', $tomcat_config_server_tomcat_users)
+
 #package
 $packages = hiera('packages', {})
 create_resources('package', $packages)
