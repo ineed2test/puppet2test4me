@@ -217,7 +217,9 @@ tomcat_config_server_connector:
       redirectPort: 8443
 tomcat_config_server_tomcat_users:
   manager-gui:
-    element: role
+    catalina_base: /home/kundea/tomcat
+    owner: kundea
+    group: kundea    element: role
     element_name: manager-gui
 
   user1:
