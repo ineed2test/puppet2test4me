@@ -223,7 +223,8 @@ tomcat_config_server_tomcat_users:
     element: user
     element_name: user1
     password: blah
-    roles: 'manager-gui'
+    roles:
+      - manager_gui
 
 # exec important commands
 execs:
