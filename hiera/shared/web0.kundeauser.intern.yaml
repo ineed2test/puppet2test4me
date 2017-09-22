@@ -219,7 +219,8 @@ tomcat_config_server_tomcat_users:
   manager-gui:
     catalina_base: /home/kundea/tomcat
     owner: kundea
-    group: kundea    element: role
+    group: kundea
+    element: role
     element_name: manager-gui
 
   user1:
