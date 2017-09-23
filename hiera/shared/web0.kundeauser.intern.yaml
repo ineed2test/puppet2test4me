@@ -232,7 +232,7 @@ tomcat_config_server_connector:
 #    password: blah
 ## this is an array
 #    roles:
-      - manager_gui
+#      - manager_gui
 
 # exec important commands
 execs:
