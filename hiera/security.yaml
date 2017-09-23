@@ -14,7 +14,8 @@ tomcat_config_server_tomcat_users:
     group: kundea
     element: user
     element_name: user1
-    password: blahh
+    password: >
+      ENC[PKCS7,MIIBeQYJKoZIhvcNAQcDoIIBajCCAWYCAQAxggEhMIIBHQIBADAFMAACAQEwDQYJKoZIhvcNAQEBBQAEggEABKQlJI7t7aOe9P4/uyC1QKx4TnuIjz3SM4ks7p6EL0DYJ9t/SPcIcMlU1kKBBy3SoDa+9gRYsuR8+cA8Hpj9LvHWI+0SumEOTH5MOFTbejE8g2KcotLsNgDNnMMmMG3jaCfgbu54EzsW46eTQJg6jTGx+A68ykSWdloyD2Yw3JBgExGc5vJfFI36KLK1Kz/80+xvRVAo5okC1aNpj4WMnNFBiO8VLg0lrL+rOv5QESLngnuiJ0IDcbdY6DMc6MCT78pHPpj+UzEdHgBRnwMsV2ec4c5cVmldSQPgG/mksUpufRF0E5LnKI8/w4yF4QyIWISId9rEnOfizWuqL5rZsjA8BgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBALyZ7JhjN4842mkOL+tEABgBAu6V7ueXsT4/r1wqLeV/Za]
 # this is an array
     roles:
       - manager_gui
