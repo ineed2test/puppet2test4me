@@ -91,7 +91,7 @@ files:
     group: kundea
     mode:  ugo=rwx
 
-files_lines:
+file_lines:
   'tomcat_server_xml':
     path: /home/kundea/tomcat/conf/server.xml
     line: 'test'
