@@ -95,7 +95,7 @@ file_lines:
   tomcat_server_xml:
     path: '/home/kundea/tomcat/conf/server.xml'
     line: 'test'
-    match: 'address'
+    match: '^address'
 #    match: '^address\=\"\<'
  diverse apache settings
 apache::mpm_module: prefork
