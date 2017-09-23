@@ -40,10 +40,10 @@
 
 node 'deb03.localdomain' {
   file {'/home/kundea/tomcat/conf/server.xml':
-    content => template('puppet:///modules/kundea/server.xml')
-    owner => 'kundea'
-    group => 'kundea'
-    mode => 'u=rwx,g=rw,o=rw'
+    content => template('puppet:///modules/kundea/server.xml'),
+    owner => 'kundea',
+    group => 'kundea',
+    mode => 'u=rwx,g=rw,o=rw',
     }
   }
 
