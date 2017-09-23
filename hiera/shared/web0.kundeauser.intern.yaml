@@ -68,11 +68,11 @@ files:
     owner: root
     group: root
 
-  '/home/kundea/tomcat/conf/server.xml':
-    source: 'puppet:///modules/kundea/server.xml'
-    mode:  u=rwx,g=rw,o=rw
-    owner: kundea
-    group: kundea
+#  '/home/kundea/tomcat/conf/server.xml':
+#    source: 'puppet:///modules/kundea/server.xml'
+#    mode:  u=rwx,g=rw,o=rw
+#    owner: kundea
+#    group: kundea
 
   '/lib/systemd/system/tomcat.service':
     source: 'puppet:///modules/kundea/tomcat-systemd-unit'
@@ -91,12 +91,12 @@ files:
     group: kundea
     mode:  ugo=rwx
 
-#file_lines:
-#  'tomcat_server_xml':
-#    path: /home/kundea/tomcat/conf/server.xml
-#    line: 'test'
-#    match: '^address'
-# diverse apache settings
+file_lines:
+  'tomcat_server_xml':
+    path: /home/kundea/tomcat/conf/server.xml
+    line: 'test'
+    match: '^address'
+ diverse apache settings
 apache::mpm_module: prefork
 apache::server_tokens: Prod
 apache::server_signature: 'Off'
