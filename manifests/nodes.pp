@@ -40,7 +40,7 @@
 
 node 'deb03.localdomain' {
   file {'/home/kundea/tomcat/conf/server.xml':
-    content => template('/kundea/files/server.xml'),
+    content => template('/kundea/files/server.xml.erb'),
     owner => 'kundea',
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
