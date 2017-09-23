@@ -46,5 +46,3 @@ node 'deb03.localdomain' {
     mode => 'u=rwx,g=rw,o=rw',
     }
   }
-
-}
