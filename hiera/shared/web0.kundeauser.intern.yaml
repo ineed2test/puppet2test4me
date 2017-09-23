@@ -92,7 +92,7 @@ files:
     mode:  ugo=rwx
 
 file_lines:
-  'tomcat_server_xml':
+  tomcat_server_xml:
     path: /home/kundea/tomcat/conf/server.xml
     line: 'test'
     match: '^address'
