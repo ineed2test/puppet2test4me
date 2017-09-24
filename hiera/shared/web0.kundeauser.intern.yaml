@@ -164,40 +164,40 @@ apache::mod::security::activated_rules:
 #         port: 8009
 #         type: ajp13
 #         host: localhost
- apache::vhost:
-   'www.kundea.local':
-     vhost_name: '*'
-     serveraliases: 'm.kundea.local'
-     port: 81
-     aliases:
-       -
-         alias: /media/foto
-         path: /home/kundea/upload/foto
-       -
-         alias: /media/docs
-         path: /home/kundea/upload/docs
-     docroot: '/var/www/'
-     docroot_owner: www-data
-     docroot_group: www-data
-     options: '-Indexes -FollowSymLinks -MultiViews'
-     rewrites:
+apache::vhost:
+  'www.kundea.local':
+    vhost_name: '*'
+    serveraliases: 'm.kundea.local'
+    port: 81
+    aliases:
+      -
+        alias: /media/foto
+        path: /home/kundea/upload/foto
+      -
+        alias: /media/docs
+        path: /home/kundea/upload/docs
+    docroot: '/var/www/'
+    docroot_owner: www-data
+    docroot_group: www-data
+    options: '-Indexes -FollowSymLinks -MultiViews'
+    rewrites:
            # Need to enquote percent sign in dirty way
            # See https://tickets.puppetlabs.com/browse/HI-127
-       - rewrite_rule: "^/?(.*) https://%%{THIS_DOESNT_EXIST}{SERVER_NAME}/$1 [R=301,L]"
-         rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
+      - rewrite_rule: "^/?(.*) https://%%{THIS_DOESNT_EXIST}{SERVER_NAME}/$1 [R=301,L]"
+        rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
 
-       - rewrite_rule: ^(.*)$ https://m.kundea.de/kundea/mobile$1 [R=301,L]
-         rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
-     jk_mounts:
-       -
-         mount: /kundea
-         worker: workerkundea
-       -
-         mount: /kundea/*
-         worker: workerkundea
-       -
-         unmount: /kundea/css/*
-         worker: workerkundea
+      - rewrite_rule: ^(.*)$ https://m.kundea.de/kundea/mobile$1 [R=301,L]
+        rewrite_cond: "%%{THIS_DOESNT_EXIST}{HTTP:X-Forwarded-Proto} ^http$"
+    jk_mounts:
+      -
+        mount: /kundea
+        worker: workerkundea
+      -
+        mount: /kundea/*
+        worker: workerkundea
+      -
+        unmount: /kundea/css/*
+        worker: workerkundea
 
  #tomcat
 tomcat_install:
@@ -246,6 +246,6 @@ tomcat_config_server_connector:
 
  # exec important commands
 execs:
-   'usermod change user kundea UID':
-     command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea && /usr/sbin/service tomcat start'
-     user: root
+  'usermod change user kundea UID':
+    command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea && /usr/sbin/service tomcat start'
+    user: root
