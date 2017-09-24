@@ -205,7 +205,7 @@ apache::mod::security::activated_rules:
      source_url: 'http://www-eu.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz'
      user: kundea
      group: kundea
-     before: File['/home/kundea/tomcat/conf/server.xml']
+#     before: File['/home/kundea/tomcat/conf/server.xml']
  tomcat_instance:
    default:
      catalina_home: /home/kundea/tomcat
