@@ -1,0 +1,29 @@
+---
+:backends:
+  - yaml
+
+:hierarchy:
+#  - "fqdn/%{::fqdn}"
+#  - "osfamily/%{::osfamily}"
+  - 'virtual_%{::is_virtual}/clients/%{::clientcert}'
+  - 'shared/%{globalgrouphieradatalb0}' 
+  - 'shared/%{globalgrouphieradataweb0}' 
+  - common
+
+#:yaml:
+#  :datadir: "%{::environment}/hiera"
+
+#:yaml:
+#  :datadir: "/etc/puppet/environments/test20170816/hiera"
+
+:yaml:
+  :datadir: "/etc/puppet/environments/%{environment}/hiera"
+
+
+#:yaml:
+#  :datadir: "/etc/puppet/environments/staging/hiera"
+
+:logger: puppet
+
+:merge_behavior:
+  - deeper
