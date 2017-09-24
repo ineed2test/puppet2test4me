@@ -113,6 +113,7 @@ create_resources('exec', $execs)
 #$apache_mod_jk = hiera('apache::mod', {})
 #create_resources('apache::mod', $apache_mod_jk)
 
-#odering with collectors
+#ordering with collectors
 
+#package <| |> -> file['/home/kundea'] <| |> -> tomcat <| |> -> file['/home/kundea/tomcat/conf/server.xml']
 package <| |> -> file['/home/kundea'] <| |> -> tomcat <| |> -> file['/home/kundea/tomcat/conf/server.xml']
