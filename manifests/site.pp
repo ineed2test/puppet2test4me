@@ -107,8 +107,8 @@ $execs = hiera('execs', {})
 create_resources('exec', $execs)
 
 #stdlib file_line
-$file_lines = hiera('file_lines', {})
-create_resources('file_line', $file_lines)
+#$file_lines = hiera('file_lines', {})
+#create_resources('file_line', $file_lines)
 
 #$apache_mod_jk = hiera('apache::mod', {})
 #create_resources('apache::mod', $apache_mod_jk)
