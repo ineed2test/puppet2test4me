@@ -48,6 +48,6 @@ node 'deb03.localdomain' {
     owner => 'kundea',
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
-    before => Tomcat_install['/home/kundea/tomcat']
+    before => Tomcat::install['/home/kundea/tomcat']
     }
   }
