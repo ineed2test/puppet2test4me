@@ -41,7 +41,7 @@ node default {}
 node 'deb03.localdomain' {
   file {'/home/kundea/tomcat/conf/server.xml':
 #    content => template('kundea/files/server.xml.erb'),
-    source => 'puppet:///modules/kundea/server.xml'
+    source => 'puppet:///modules/kundea/server.xml',
     owner => 'kundea',
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
