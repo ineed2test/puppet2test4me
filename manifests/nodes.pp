@@ -40,8 +40,10 @@
 node default {}
 node 'deb03.localdomain' {
   file {'/home/kundea/tomcat/conf/server.xml':
-#    content => template('kundea/files/server.xml.erb'),
-    source => 'puppet:///modules/kundea/server.xml.erb',
+# apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
+#  https://docs.puppet.com/puppet/latest/function.html#template
+    content => template('/kundea/server.xml'),
+#    source => 'puppet:///modules/kundea/server.xml.erb',
     owner => 'kundea',
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
