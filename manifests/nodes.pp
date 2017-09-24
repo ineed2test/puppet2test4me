@@ -37,6 +37,7 @@
 
 
 #}
+ node default {}
 
 node 'deb03.localdomain' {
   file {'/home/kundea/tomcat/conf/server.xml':
