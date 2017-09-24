@@ -54,11 +54,7 @@ packages:
   openjdk-8-jdk:
     ensure: present
 
-# service running to start at systemboot
-services:
-  tomcat:
-    ensure: true
-    enable: true
+
 
 #    puppet:///modules/<MODULE NAME>/<FILE PATH>
 files:
@@ -249,3 +245,9 @@ execs:
   'usermod change user kundea UID':
     command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea && /usr/sbin/service tomcat start'
     user: root
+
+ # service running to start at systemboot
+ services:
+   tomcat:
+     ensure: true
+     enable: true
