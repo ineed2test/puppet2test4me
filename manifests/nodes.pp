@@ -50,6 +50,6 @@ node 'deb03.localdomain' {
     mode => 'u=rwx,g=rw,o=rw',
 #    require => File['/home/kundea'],
     require => Class['tomcat'],
-    ensure => present
+    ensure => file
     }
    }
