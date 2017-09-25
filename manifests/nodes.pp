@@ -39,7 +39,7 @@
 #}
 node default {}
 node 'deb03.localdomain' {
-  file {'/home/kundea/tomcat/conf/server.xml':
+  @file {'/home/kundea/tomcat/conf/server.xml':
 ### template function
 ### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
 ###  https://docs.puppet.com/puppet/latest/function.html#template
@@ -52,5 +52,6 @@ node 'deb03.localdomain' {
 #   require Definition wird nach der angegebenen Ressource angewendet
     require => [ Class['tomcat'], File['/home/kundea'] ],
     ensure => file
+    tag => [try]
     }
    }
