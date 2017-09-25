@@ -37,21 +37,37 @@
 
 
 #}
-node default {}
-node 'deb03.localdomain' {
-  @file {'/home/kundea/tomcat/conf/server.xml':
+#node default {}
+#node 'deb03.localdomain' {
+#  @file {'/home/kundea/tomcat/conf/server.xml':
 ### template function
 ### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
 ###  https://docs.puppet.com/puppet/latest/function.html#template
-    content => template('kundea/server.xml'),
+#    content => template('kundea/server.xml'),
 ##    source => 'puppet:///modules/kundea/server.xml.erb',
-    owner => 'kundea',
-    group => 'kundea',
-    mode => 'u=rwx,g=rw,o=rw',
-#    require => File['/home/kundea'],
-#   require Definition wird nach der angegebenen Ressource angewendet
-    require => [ Class['tomcat'], File['/home/kundea'] ],
-    ensure => file,
-    tag => [try]
-    }
-   }
+#    owner => 'kundea',
+#    group => 'kundea',
+#    mode => 'u=rwx,g=rw,o=rw',
+##    require => File['/home/kundea'],
+##   require Definition wird nach der angegebenen Ressource angewendet
+#    require => [ Class['tomcat'], File['/home/kundea'] ],
+#    ensure => file,
+#    tag => [try]
+#    }
+#   }
+
+class kundea::webserver
+  file {'/home/kundea/tomcat/conf/server.xml':
+   ### template function
+   ### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
+   ###  https://docs.puppet.com/puppet/latest/function.html#template
+      content => template('kundea/server.xml'),
+   ##    source => 'puppet:///modules/kundea/server.xml.erb',
+      owner => 'kundea',
+      group => 'kundea',
+      mode => 'u=rwx,g=rw,o=rw',
+   #    require => File['/home/kundea'],
+   #   require Definition wird nach der angegebenen Ressource angewendet
+      require => [ Class['tomcat'], File['/home/kundea'] ],
+      ensure => file,
+      }
