@@ -41,7 +41,7 @@
         -->
 
 
-        <Connector port="9081" protocol="HTTP/1.1"
+        <Connector port="6051" protocol="HTTP/1.1"
                    connectionTimeout="20000"
                    redirectPort="8443" />
 
