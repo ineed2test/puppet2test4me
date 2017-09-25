@@ -244,7 +244,7 @@ tomcat_config_server_connector:
  # exec important commands
 execs:
   'usermod change user kundea UID':
-    command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea && /usr/sbin/service tomcat start'
+    command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea'
     user: root
 
  # service running to start at systemboot
