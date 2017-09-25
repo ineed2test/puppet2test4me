@@ -116,7 +116,7 @@ create_resources('exec', $execs)
 #ordering with collectors
 
 #package <| |> -> file['/home/kundea'] <| |> -> tomcat <| |> -> file['/home/kundea/tomcat/conf/server.xml']
-#Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml']-> Exec['usermod change user kundea UID']-> Service['tomcat']
-Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> Exec['usermod change user kundea UID'] -> Service['tomcat'] -> Class['kundea::webserverfile']
+Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml']-> Exec['usermod change user kundea UID']-> Service['tomcat']
+#Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> Exec['usermod change user kundea UID'] -> Service['tomcat'] -> Class['kundea::webserverfile']
 #Tomcat::install -> File['/home/kundea/tomcat/conf/server.xml']
 #Tomcat -> File <| tag == try |>
