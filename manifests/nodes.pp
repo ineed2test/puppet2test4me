@@ -49,7 +49,7 @@ node 'deb03.localdomain' {
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
 #    require => File['/home/kundea'],
-    require => Class['tomcat'],
+    before => Class['tomcat'],
     ensure => file
     }
    }
