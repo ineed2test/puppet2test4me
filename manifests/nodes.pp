@@ -56,7 +56,7 @@
 #    }
 #   }
 
-class kundea::webserverfile
+class kundea::webserverfile {
   file {'/home/kundea/tomcat/conf/server.xml':
    ### template function
    ### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
@@ -70,3 +70,4 @@ class kundea::webserverfile
       require => [ Class['tomcat'], File['/home/kundea'] ],
       ensure => file,
       }
+     }
