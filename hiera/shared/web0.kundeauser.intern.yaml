@@ -202,7 +202,7 @@ tomcat_install:
     catalina_home: /home/kundea/tomcat
     user: kundea
     group: kundea
-#    require: File['/home/kundea/tomcat/conf/server.xml']
+    require: File['/home/kundea/tomcat/conf/server.xml']
 tomcat_instance:
   default:
     catalina_home: /home/kundea/tomcat
@@ -222,13 +222,13 @@ tomcat_config_server_connector:
       minSpareThreads: 150
       acceptCount: 200
       redirectPort: 8443
- #tomcat_config_server_tomcat_users:
- #  manager-gui:
- #    catalina_base: /home/kundea/tomcat
- #    owner: kundea
- #    group: kundea
- #    element: role
- #    element_name: manager-gui
+tomcat_config_server_tomcat_users:
+  manager-gui:
+    catalina_base: /home/kundea/tomcat
+    owner: kundea
+    group: kundea
+    element: role
+    element_name: manager-gui
 
  #  user1:
  #    catalina_base: /home/kundea/tomcat
