@@ -116,5 +116,5 @@ create_resources('exec', $execs)
 #ordering with collectors
 
 #package <| |> -> file['/home/kundea'] <| |> -> tomcat <| |> -> file['/home/kundea/tomcat/conf/server.xml']
-Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml'] _> Service['tomcat']
+Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml'] -> Service['tomcat']
 #Tomcat::install -> File['/home/kundea/tomcat/conf/server.xml']
