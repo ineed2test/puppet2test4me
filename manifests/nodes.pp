@@ -49,7 +49,8 @@ node 'deb03.localdomain' {
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
 #    require => File['/home/kundea'],
-    require => Class['tomcat'],
+#   require Definition wird nach der angegebenen Ressource angewendet
+    require => [ Class['tomcat'], File['/home/kundea'] ]
     ensure => file
     }
    }
