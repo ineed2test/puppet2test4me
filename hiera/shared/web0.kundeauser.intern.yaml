@@ -8,7 +8,6 @@ classes:
   - apache::mod::security
   - tomcat
   - archive
-  - '::kundea::webserverfile'
 #admins:
 #  dreck11:
 #    sshkeys:
