@@ -202,7 +202,7 @@ tomcat_install:
     catalina_home: /home/kundea/tomcat
     user: kundea
     group: kundea
-#    before: File['/home/kundea/tomcat/conf/server.xml']
+    before: File['/home/kundea/tomcat/conf/server.xml']
 tomcat_instance:
   default:
     catalina_home: /home/kundea/tomcat
