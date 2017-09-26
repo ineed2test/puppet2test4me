@@ -229,7 +229,7 @@ tomcat_instance:
 #      redirectPort: 8443
 tomcat_config_server_tomcat_users:
   manager-gui:
-#    catalina_base: /home/kundea/tomcat
+    catalina_base: /home/kundea/tomcat
 #    catalina_base: /home/tomcat
     owner: kundea
     group: kundea
