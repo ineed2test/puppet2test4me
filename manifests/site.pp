@@ -1,8 +1,8 @@
-file {'/tmp/example-ip':                                            # resource type file and filename
-  ensure  => present,                                               # make sure it exists
-  mode    => '0755',                                                  # file permissions
-  content => "Here is my Public IP Address: ${ipaddress_eth0}.\n",  # note the ipaddress_eth0 fact
-}
+#file {'/tmp/example-ip':                                            # resource type file and filename
+#  ensure  => present,                                               # make sure it exists
+#  mode    => '0755',                                                  # file permissions
+#  content => "Here is my Public IP Address: ${ipaddress_eth0}.\n",  # note the ipaddress_eth0 fact
+#}
 
 #node 'deb02.localdomain' {
 #  class { 'apache': }             # use apache module
@@ -29,6 +29,14 @@ notify{"The value is: ${globalgrouphieradataweb0}": }
 
 # include base classes
 hiera_include('classes')
+
+ # host /etc/hosts
+ $hosts = hiera('hosts', {})
+ create_resources('host', $hosts)
+
+#package
+$packages = hiera('packages', {})
+create_resources('package', $packages)
 
 $files = hiera_hash('files', {})
 create_resources('file', $files)
@@ -90,21 +98,13 @@ create_resources('tomcat::config::server::connector', $tomcat_config_server_conn
 $tomcat_config_server_tomcat_users =  hiera('tomcat_config_server_tomcat_users', {})
 create_resources('tomcat::config::server::tomcat_users', $tomcat_config_server_tomcat_users)
 
-#package
-$packages = hiera('packages', {})
-create_resources('package', $packages)
-
-# host /etc/hosts
-$hosts = hiera('hosts', {})
-create_resources('host', $hosts)
+#exec commands
+$execs = hiera('execs', {})
+create_resources('exec', $execs)
 
 #service
 $services = hiera('services', {})
 create_resources('service', $services)
-
-#exec commands
-$execs = hiera('execs', {})
-create_resources('exec', $execs)
 
 #stdlib file_line
 #$file_lines = hiera('file_lines', {})
