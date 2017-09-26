@@ -10,6 +10,7 @@ classes:
   - archive
 #  - kundea::tcserverconf
   - '::kundea'
+  - '::kundea::tcserverconf'
 #admins:
 #  dreck11:
 #    sshkeys:
