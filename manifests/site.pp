@@ -121,5 +121,5 @@ create_resources('service', $services)
 #Tomcat::install -> File['/home/kundea/tomcat/conf/server.xml']
 #Tomcat -> File <| tag == try |>
 #class['::tomcat::install'] -> class['::tomcat::instance']
-Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> Service['tomcat']
+Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> Service['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml']
 #Class['apache'] -> Class['tomcat'] -> Service['tomcat']
