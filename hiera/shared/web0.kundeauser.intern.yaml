@@ -262,5 +262,6 @@ services:
 #    require: Class['tomcat']
 
 kundea_tcserverconf:
-   owner: kundea
-#   group: kundea
+  '/home/kundea/tomcat/conf/server.xml'
+    owner: kundea
+    group: kundea
