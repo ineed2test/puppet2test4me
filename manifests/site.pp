@@ -117,7 +117,7 @@ create_resources('service', $services)
 
 #package <| |> -> file['/home/kundea'] <| |> -> tomcat <| |> -> file['/home/kundea/tomcat/conf/server.xml']
 #Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml']-> Exec['usermod change user kundea UID']-> Service['tomcat']
-Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['::tomcat::install'] -> Exec['usermod change user kundea UID'] -> Service['tomcat']
+Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Tomcat::Install['/home/kundea/tomcat'] -> Exec['usermod change user kundea UID'] -> Service['tomcat']
 #Tomcat::install -> File['/home/kundea/tomcat/conf/server.xml']
 #Tomcat -> File <| tag == try |>
 #class['::tomcat::install'] -> class['::tomcat::instance']
