@@ -258,4 +258,4 @@ services:
   tomcat:
     ensure: true
     enable: true
-    require: Class['tomcat']
+#    require: Class['tomcat']
