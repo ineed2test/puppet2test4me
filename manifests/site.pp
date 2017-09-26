@@ -106,6 +106,10 @@ create_resources('exec', $execs)
 $services = hiera('services', {})
 create_resources('service', $services)
 
+# define Type kundea::tcserverconf
+$kundea_tcserverconf = hiera('kundea_tcserverconf', {})
+create_resources('kundea::tcserverconf', $kundea_tcserverconf)
+
 #stdlib file_line
 #$file_lines = hiera('file_lines', {})
 #create_resources('file_line', $file_lines)
