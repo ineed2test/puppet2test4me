@@ -254,7 +254,8 @@ execs:
     user: root
 
 # # service running to start at systemboot
-#services:
-#  tomcat:
-#    ensure: true
-#    enable: true
+services:
+  tomcat:
+    ensure: true
+    enable: true
+    require: Class['tomcat']
