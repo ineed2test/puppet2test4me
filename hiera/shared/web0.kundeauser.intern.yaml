@@ -8,8 +8,8 @@ classes:
   - apache::mod::security
   - tomcat
   - archive
-  - kundea::tcserverconf
-  - kundea
+#  - kundea::tcserverconf
+#  - kundea
 #admins:
 #  dreck11:
 #    sshkeys:
