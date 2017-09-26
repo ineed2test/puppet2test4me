@@ -27,6 +27,7 @@
 
 
 define kundea::tcserverconf (
+  String $text = '',
   $owner = undef,
   $group = undef,
 ) {
