@@ -26,7 +26,7 @@
 #}
 
 
-define ::kundea::tcserverconf (
+define kundea::tcserverconf (
   $myname = undef,
   $owner = undef,
   $group = undef,
