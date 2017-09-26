@@ -31,7 +31,7 @@ define kundea::tcserverconf (
   $owner = undef,
   $group = undef,
 ) {
-  file {$myname:
+  file {$title:
 ## template function
 ## apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
 ##  https://docs.puppet.com/puppet/latest/function.html#template
