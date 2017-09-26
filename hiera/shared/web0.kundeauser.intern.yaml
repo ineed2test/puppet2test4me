@@ -66,7 +66,8 @@ files:
     group: root
 
 #  outsourced in node.pp
-#  '/home/kundea/tomcat/conf/server.xml':
+  '/home/kundea/tomcat/conf/server.xml':
+    owner => 'kundea'
 #    source: 'puppet:///modules/kundea/server.xml'
 #    mode:  u=rwx,g=rw,o=rw
 #    owner: kundea
