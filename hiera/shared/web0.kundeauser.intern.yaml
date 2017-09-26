@@ -9,7 +9,7 @@ classes:
   - tomcat
   - archive
 #  - '::kundea::tcserverconf'
-  - '::kundea'
+#  - '::kundea'
 #admins:
 #  dreck11:
 #    sshkeys:
@@ -260,3 +260,7 @@ services:
     ensure: true
     enable: true
 #    require: Class['tomcat']
+
+kundea_tcserverconf:
+  owner: kundea
+  group: kundea
