@@ -261,7 +261,7 @@ services:
     enable: true
 #    require: Class['tomcat']
 
-#kundea_tcserverconf:
+kundea_tcserverconf:
 # '/home/kundea/tomcat/conf/server.xml':
 #   owner: kundea
 #   group: kundea
