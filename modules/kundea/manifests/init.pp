@@ -1,4 +1,4 @@
 class kundea {
-  class { '::kundea::admins': },
-  kundea::tcserverconf { 'dba123': }
+  class { '::kundea::admins': }
+  kundea::tcserverconf { 'test': }
 }
