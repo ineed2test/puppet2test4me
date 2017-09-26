@@ -9,7 +9,7 @@ classes:
   - tomcat
   - archive
 #  - '::kundea::tcserverconf'
-#  - '::kundea'
+  - '::kundea'
 #admins:
 #  dreck11:
 #    sshkeys:
