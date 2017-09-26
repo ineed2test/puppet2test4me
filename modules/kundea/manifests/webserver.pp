@@ -27,7 +27,6 @@
 
 
 define kundea::tcserverconf (
-  $myname = undef,
   $owner = undef,
   $group = undef,
 ) {
@@ -43,7 +42,7 @@ define kundea::tcserverconf (
 #    require => File['/home/kundea'],
 #   require Definition wird nach der angegebenen Ressource angewendet
 #    require => [ Class['tomcat'], File['/home/kundea'] ],
-    ensure => file,
+#    ensure => file,
 #    tag => [try]
     }
    }
