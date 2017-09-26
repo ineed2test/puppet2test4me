@@ -33,7 +33,8 @@ node 'deb03.localdomain' {
 ##  https://docs.puppet.com/puppet/latest/function.html#template
     content => template('kundea/server.xml'),
 #    source => 'puppet:///modules/kundea/server.xml.erb',
-    owner => 'kundea',
+#    owner => 'kundea',
+    owner => 'undef',
     group => 'kundea',
     mode => 'u=rwx,g=rw,o=rw',
 #    require => File['/home/kundea'],
