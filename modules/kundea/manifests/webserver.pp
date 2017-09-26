@@ -33,7 +33,7 @@ define ::kundea::tcserverconf (
 ) {
   file {$title:
 ## template function
-## apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
+### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
 ##  https://docs.puppet.com/puppet/latest/function.html#template
     content => template('kundea/server.xml'),
 #    source => 'puppet:///modules/kundea/server.xml.erb',
