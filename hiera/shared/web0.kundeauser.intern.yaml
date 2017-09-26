@@ -236,16 +236,16 @@ tomcat_config_server_tomcat_users:
     element: role
     element_name: manager-gui
 
- #  user1:
- #    catalina_base: /home/kundea/tomcat
- #    owner: kundea
- #    group: kundea
- #    element: user
- #    element_name: user1
- #    password: blah
- ## this is an array
- #    roles:
- #      - manager_gui
+   user1:
+     catalina_base: /home/kundea/tomcat
+     owner: kundea
+     group: kundea
+     element: user
+     element_name: user1
+     password: blah
+ # this is an array
+     roles:
+       - manager_gui
 
  # exec important commands
 execs:
