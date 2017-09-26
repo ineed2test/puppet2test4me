@@ -263,5 +263,5 @@ services:
 
 kundea_tcserverconf:
  '/home/kundea/tomcat/conf/server.xml':
-#   owner: kundea
+   owner: kundea
 #   group: kundea
