@@ -8,7 +8,7 @@ classes:
   - sudo
   - sudo::configs
   - ntp
-  - kundea
+  - '::kundea'
   - apt
   - apt::backports
 #  - '::accounts::admins'
