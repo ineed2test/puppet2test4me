@@ -122,3 +122,4 @@ create_resources('service', $services)
 #Tomcat -> File <| tag == try |>
 #class['::tomcat::install'] -> class['::tomcat::instance']
 Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui']
+Class['tomcat'] -> Service['tomcat']
