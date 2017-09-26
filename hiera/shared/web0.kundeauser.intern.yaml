@@ -253,8 +253,8 @@ execs:
     command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea'
     user: root
 
- # service running to start at systemboot
-services:
-  tomcat:
-    ensure: true
-    enable: true
+# # service running to start at systemboot
+#services:
+#  tomcat:
+#    ensure: true
+#    enable: true
