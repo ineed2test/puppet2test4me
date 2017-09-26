@@ -8,7 +8,7 @@ classes:
   - apache::mod::security
   - tomcat
   - archive
-  - kundea::tcserverconf
+  - '::kundea::tcserverconf'
 # - '::kundea'
 #admins:
 #  dreck11:
