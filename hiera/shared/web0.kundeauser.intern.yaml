@@ -166,7 +166,7 @@ apache::mod::security::activated_rules:
   - 'rules/unix-shell.data'
   - 'rules/windows-powershell-commands.data'
 
-apache::mod::jk:
+apache_mod_jk:
   workers_file: /etc/libapache2-mod-jk/workers.properties
 #  workers_file: '/etc/workers.properties'
 #  workers_file_content:
