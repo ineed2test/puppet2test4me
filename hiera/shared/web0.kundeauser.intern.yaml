@@ -255,7 +255,9 @@ execs:
   'usermod change user kundea UID':
     command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea'
     user: root
-
+  'restart tomcat':
+    command: '/usr/sbin/service tomcat restart'
+    user: root
 # # service running to start at systemboot
 services:
   tomcat:
