@@ -268,7 +268,7 @@ services:
 #    owner: kundea
 #    group: kundea
 
-webserver:
+kundea::webserver:
   '/home/kundea/tomcat/conf/server.xml':
     owner: kundea
     group: kundea
