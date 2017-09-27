@@ -8,9 +8,10 @@ classes:
   - apache::mod::security
   - tomcat
   - archive
-#  - kundea::tcserverconf
+# with parameterized class webserver.pp
   - '::kundea'
   - '::kundea::webserver'
+# With define resource type tcserverconf.pp
 #  - '::kundea::tcserverconf'
 #admins:
 #  dreck11:
@@ -265,11 +266,13 @@ services:
     enable: true
 #    require: Class['tomcat']
 
+ # With define resource type tcserverconf.pp
 #kundea_tcserverconf:
 #  '/home/kundea/tomcat/conf/server.xml':
 #    owner: kundea
 #    group: kundea
 
+# with parameterized class webserver.pp
 kundea::webserver:
   '/home/kundea/tomcat/conf/server.xml':
     owner: kundea
