@@ -25,7 +25,7 @@
 #    }
 #}
 
-
+# With define resource
 ## define resource was chosen, because the template function does not work in hiera
 #define kundea::tcserverconf (
 #  $owner = undef,
