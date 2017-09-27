@@ -106,7 +106,7 @@ create_resources('exec', $execs)
 $services = hiera('services', {})
 create_resources('service', $services)
 
-## define Type kundea::tcserverconf
+## define Type kundea::tcserverconf # With define resource type tcserverconf.pp
 #$kundea_tcserverconf = hiera('kundea_tcserverconf', {})
 #create_resources('kundea::tcserverconf', $kundea_tcserverconf)
 
@@ -122,5 +122,7 @@ create_resources('service', $services)
 #Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Class['tomcat'] -> File['/home/kundea/tomcat/conf/server.xml']-> Exec['usermod change user kundea UID']-> Service['tomcat']
 #Package['openjdk-8-jdk'] -> File['/home/kundea'] -> Tomcat::Install['/home/kundea/tomcat'] -> Exec['usermod change user kundea UID'] -> Service['tomcat']
 #class['::tomcat::install'] -> class['::tomcat::instance']
+# With define resource type tcserverconf.pp
 #Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> File['/home/kundea/tomcat/conf/server.xml'] -> Service['tomcat']
+# with parameterized class webserver.pp
 Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> Tomcat::Config::Server::Tomcat_users['user1'] -> Class[Kundea::Webserver] -> Service['tomcat'] -> Exec['restart tomcat']
