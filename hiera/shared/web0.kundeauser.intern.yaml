@@ -272,3 +272,4 @@ kundea::webserver:
   '/home/kundea/tomcat/conf/server.xml':
     owner: kundea
     group: kundea
+    message: 'hallo from hiera'
