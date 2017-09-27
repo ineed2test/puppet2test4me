@@ -169,12 +169,12 @@ apache::mod::security::activated_rules:
 apache_mod_jk:
   workers_file: /etc/libapache2-mod-jk/workers.properties
 #  workers_file: '/etc/workers.properties'
-#  workers_file_content:
-#    worker_lists: workerkundea
-#       some_name:
-#         port: 8009
-#         type: ajp13
-#         host: localhost
+  workers_file_content:
+    worker_lists: workerkundea
+      some_name:
+      port: 8009
+      type: ajp13
+      host: localhost
 apache::vhost:
   'www.kundea.local':
     vhost_name: '*'
