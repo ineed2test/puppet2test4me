@@ -216,7 +216,7 @@ tomcat_instance:
 #    catalina_home: /home/tomcat
     user: kundea
     group: kundea
-# use server.xml template
+# now use server.xml template
 #tomcat_config_server_connector:
 #  ajp:
 ##    catalina_base: /home/kundea/tomcat
@@ -232,6 +232,16 @@ tomcat_instance:
 #      minSpareThreads: 150
 #      acceptCount: 200
 #      redirectPort: 8443
+tomcat_config_context_valve:
+  clustermanager:
+    ensure: present
+    resource_name: Manager
+    resource_type: org.apache.catalina.ha.session.DeltaManager
+    catalina_base: /home/kundea/tomcat
+    additional_attributes:
+      expireSessionsOnShutdown: false
+      notifyListenersOnReplication: true
+
 tomcat_config_server_tomcat_users:
   manager-gui:
     catalina_base: /home/kundea/tomcat

@@ -98,6 +98,9 @@ create_resources('tomcat::config::server::connector', $tomcat_config_server_conn
 $tomcat_config_server_tomcat_users =  hiera('tomcat_config_server_tomcat_users', {})
 create_resources('tomcat::config::server::tomcat_users', $tomcat_config_server_tomcat_users)
 
+$tomcat_config_context_valve = hiera('tomcat_config_context_valve', {})
+create_resources('tomcat::config::context::valve', $tomcat_config_context_valve)
+
 #exec commands
 $execs = hiera('execs', {})
 create_resources('exec', $execs)
