@@ -26,23 +26,24 @@
 #}
 
 
-define kundea::tcserverconf (
-  $owner = undef,
-  $group = undef,
-  ) {
-  file {$title:
-## template function
-### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
-##  https://docs.puppet.com/puppet/latest/function.html#template
-    content => template('kundea/server.xml'),
-#    source => 'puppet:///modules/kundea/server.xml.erb',
-    owner => $owner,
-    group => $group,
-    mode => 'u=rwx,g=rw,o=rw',
-#    require => File['/home/kundea'],
-#   require Definition wird nach der angegebenen Ressource angewendet
-#    require => [ Class['tomcat'], File['/home/kundea'] ],
-    ensure => file,
-#    tag => [try]
-    }
-   }
+## define resource was chosen, because the template function does not work in hiera
+#define kundea::tcserverconf (
+#  $owner = undef,
+#  $group = undef,
+#  ) {
+#  file {$title:
+### template function
+#### apache/vhost.conf.erb will load the file <MODULES DIRECTORY>/apache/templates/vhost.conf.erb
+###  https://docs.puppet.com/puppet/latest/function.html#template
+#    content => template('kundea/server.xml'),
+##    source => 'puppet:///modules/kundea/server.xml.erb',
+#    owner => $owner,
+#    group => $group,
+#    mode => 'u=rwx,g=rw,o=rw',
+##    require => File['/home/kundea'],
+##   require Definition wird nach der angegebenen Ressource angewendet
+##    require => [ Class['tomcat'], File['/home/kundea'] ],
+#    ensure => file,
+##    tag => [try]
+#    }
+#   }

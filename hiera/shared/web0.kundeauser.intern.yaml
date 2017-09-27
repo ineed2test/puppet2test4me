@@ -10,6 +10,7 @@ classes:
   - archive
 #  - kundea::tcserverconf
   - '::kundea'
+  - '::kundea::webserver'
 #  - '::kundea::tcserverconf'
 #admins:
 #  dreck11:
@@ -262,7 +263,12 @@ services:
     enable: true
 #    require: Class['tomcat']
 
-kundea_tcserverconf:
+#kundea_tcserverconf:
+#  '/home/kundea/tomcat/conf/server.xml':
+#    owner: kundea
+#    group: kundea
+
+webserver:
   '/home/kundea/tomcat/conf/server.xml':
     owner: kundea
     group: kundea
