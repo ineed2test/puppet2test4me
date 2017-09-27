@@ -1,5 +1,5 @@
 class kundea::webserver (
-  $message = 'hello everybody !'
+  $message = 'hello everybody!'
   ) {
   notify{ "parameterized class example, message = \"${message}\"": }
   file { '/home/kundea/tomcat/conf/server.xml':
