@@ -208,7 +208,12 @@ apache::vhost:
       -
         unmount: /kundea/css/*
         worker: workerkundea
-
+      -
+        mount: /examples
+        worker: workerkundea
+       -
+        mount: /examples/*
+        worker: workerkundea
  #tomcat
 tomcat_install:
   '/home/kundea/tomcat':
