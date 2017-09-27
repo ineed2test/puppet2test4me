@@ -211,7 +211,7 @@ apache::vhost:
       -
         mount: /examples
         worker: workerkundea
-       -
+      -
         mount: /examples/*
         worker: workerkundea
  #tomcat
