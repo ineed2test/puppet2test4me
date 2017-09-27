@@ -171,7 +171,7 @@ apache_mod_jk:
 #  workers_file: '/etc/workers.properties'
   workers_file_content:
     worker_lists: workerkundea
-      some_name:
+    some_name:
       port: 8009
       type: ajp13
       host: localhost
