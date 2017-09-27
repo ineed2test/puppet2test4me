@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# setenv.sh
+#
+#
+#
+
+### Host settings.
+CATALINA_PID="/home/kundea/tomcat/bin/tomcat.pid"
+CATALINA_HOME=/home/kundea/tomcat
+CATALINA_BASE=/home/kundea/tomcat
+LD_LIBRARY_PATH=/home/kundea/tomcat/lib
+export CATALINA_HOME CATALINA_BASE LD_LIBRARY_PATH
+export CATALINA_OUT="/var/log/tomcat/catalina.out"
+
+# ops
+CATALINA_OPTS="${CATALINA_OPTS}
+-Djava.awt.headless=true
+-server
+-d64
+-Xms128m
+-Xmx128m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:PermSize=32m
+-XX:MaxPermSize=32m
+-XX:+UseConcMarkSweepGC
+-XX:+CMSClassUnloadingEnabled
+-XX:+CMSIncrementalMode
+-XX:MaxGCPauseMillis=250
+-XX:SurvivorRatio=3
+-XX:NewSize=64m
+-XX:MaxNewSize=64m"
+
+CATALINA_OPTS="${CATALINA_OPTS} -Dappname=kundea -Dfile.encoding=UTF-8"
+
+## monitoring jconsole
+
+CATALINA_OPTS="$CATALINA_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1199  -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname="<%= scope['::fqdn'] -%>"
+export CATALINA_OPTS
+
+### Use standard POSIX language.
+LANG=C
+#LANG=de_DE
+export LANG
+
+# end of file
+#
