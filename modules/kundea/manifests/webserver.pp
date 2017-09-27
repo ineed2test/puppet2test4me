@@ -10,7 +10,7 @@ class kundea::webserver (
   }
 
   file { '/home/kundea/tomcat/bin/setenv.sh':
-    content => template('/kundea/setenv.sh.erb'),
+    content => template('kundea/setenv.sh.erb'),
     owner   => 'kundea',
     group   => 'kundea',
     mode    => 'u=rwx,g=rw,o=rw',
