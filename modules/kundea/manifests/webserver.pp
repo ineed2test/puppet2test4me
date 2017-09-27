@@ -8,4 +8,11 @@ class kundea::webserver (
     group   => 'kundea',
     mode    => 'u=rwx,g=rw,o=rw',
   }
+
+  file { '/home/kundea/tomcat/bin/setenv.sh':
+    content => template('/kundea/setenv.sh'),
+    owner   => 'kundea',
+    group   => 'kundea',
+    mode    => 'u=rwx,g=rw,o=rw',
+  }
 }
