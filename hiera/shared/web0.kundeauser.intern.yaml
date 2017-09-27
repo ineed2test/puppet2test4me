@@ -240,11 +240,10 @@ tomcat_instance:
 #      minSpareThreads: 150
 #      acceptCount: 200
 #      redirectPort: 8443
-tomcat_config_context_valve:
+tomcat_config_context_manager:
   clustermanager:
     ensure: present
-    resource_name: Manager
-    resource_type: org.apache.catalina.ha.session.DeltaManager
+    manager_classname: org.apache.catalina.ha.session.DeltaManager
     catalina_base: /home/kundea/tomcat
     additional_attributes:
       expireSessionsOnShutdown: false
