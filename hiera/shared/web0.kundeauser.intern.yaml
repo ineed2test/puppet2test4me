@@ -177,11 +177,11 @@ apache::mod::jk:
   'jk1':
     workers_file: /etc/libapache2-mod-jk/workers.properties
 ##  workers_file: '/etc/workers.properties'
-#  workers_file_content:
-#    worker_lists: workerkundea
-#    worker.workerkundea.port: 8009
-#    worker.workerkundea.host: localhost
-#    worker.workerkundea.type: ajp13
+    workers_file_content:
+    worker_lists: workerkundea
+    worker.workerkundea.port: 8011
+    worker.workerkundea.host: localhost
+    worker.workerkundea.type: ajp13
 apache::vhost:
   'www.kundea.local':
     vhost_name: '*'
