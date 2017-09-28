@@ -63,11 +63,11 @@ packages:
 
 #    puppet:///modules/<MODULE NAME>/<FILE PATH>
 files:
-  '/etc/libapache2-mod-jk/workers.properties':
-    source: 'puppet:///modules/kundea/workers.properties'
-    mode:  u=rwx,g=rw,o=rw
-    owner: root
-    group: root
+#  '/etc/libapache2-mod-jk/workers.properties':
+#    source: 'puppet:///modules/kundea/workers.properties'
+#    mode:  u=rwx,g=rw,o=rw
+#    owner: root
+#    group: root
 
 #  '/etc/apache2/mods-available/jk.conf':
 #    source: 'puppet:///modules/kundea/jk.conf'
