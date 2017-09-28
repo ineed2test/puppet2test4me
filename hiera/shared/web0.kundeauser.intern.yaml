@@ -290,7 +290,7 @@ execs:
     command: '/usr/sbin/service tomcat restart'
     user: root
   'enable apache mod_jk':
-    command: '/usr/sbin/a2enmod jk && /usr/sbin/service apache restart'
+    command: '/usr/sbin/a2enmod jk && /bin/systemctl restart apache2'
     user: root
 # # service running to start at systemboot
 services:
