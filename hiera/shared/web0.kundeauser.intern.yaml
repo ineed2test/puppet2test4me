@@ -5,7 +5,7 @@ classes:
   - apache
   - apache::mod::alias
   - apache::mod::jk
-#  - apache::mod::security
+  - apache::mod::security
   - tomcat
   - archive
 # with parameterized class webserver.pp
@@ -172,7 +172,7 @@ apache::mod::security::activated_rules:
   - 'rules/unix-shell.data'
   - 'rules/windows-powershell-commands.data'
 
-# not working
+# now working
 apache::mod::jk::workers_file: /etc/libapache2-mod-jk/workers.properties
 apache::mod::jk::workers_file_content:
   worker_lists:
