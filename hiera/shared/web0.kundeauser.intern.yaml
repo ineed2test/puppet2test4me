@@ -175,9 +175,10 @@ apache::mod::security::activated_rules:
 # not working
 apache::mod::jk::workers_file: /etc/libapache2-mod-jk/workers.properties
 apache::mod::jk::worker_lists: workerkundea
-apache::mod::jk::worker.workerkundea.port: 8011
-apache::mod::jk::worker.workerkundea.host: localhost
-apache::mod::jk::worker.workerkundea.type: ajp13
+apache::mod::jk::workers_file_content:
+  worker.workerkundea.port: 8011
+#apache::mod::jk::worker.workerkundea.host: localhost
+#apache::mod::jk::worker.workerkundea.type: ajp13
 #apache::mod::jk:
 #  'jk1':
 #    workers_file: /etc/libapache2-mod-jk/workers.properties
