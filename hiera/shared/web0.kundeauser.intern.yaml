@@ -299,7 +299,7 @@ tomcat_config_server_tomcat_users:
      roles:
        - manager_gui
 
- # exec important commands
+ ## exec important commands
 execs:
   'usermod change user kundea UID':
     command: '/usr/sbin/service tomcat stop && /usr/sbin/groupmod -g 4711 kundea && /usr/sbin/usermod -u 4711 kundea'
