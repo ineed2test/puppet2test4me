@@ -173,6 +173,7 @@ apache::mod::security::activated_rules:
   - 'rules/windows-powershell-commands.data'
 
 # not working
+apache::mod::jk::workers_file: /etc/libapache2-mod-jk/workers.properties
 #apache::mod::jk:
 #  'jk1':
 #    workers_file: /etc/libapache2-mod-jk/workers.properties
