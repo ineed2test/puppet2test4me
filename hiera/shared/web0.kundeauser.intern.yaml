@@ -69,11 +69,11 @@ files:
     owner: root
     group: root
 
-  '/etc/apache2/mods-available/jk.conf':
-    source: 'puppet:///modules/kundea/jk.conf'
-    mode:  u=rwx,g=rw,o=rw
-    owner: root
-    group: root
+#  '/etc/apache2/mods-available/jk.conf':
+#    source: 'puppet:///modules/kundea/jk.conf'
+#    mode:  u=rwx,g=rw,o=rw
+#    owner: root
+#    group: root
 
 #  outsourced in node.pp
 # '/home/kundea/tomcat/conf/server.xml':
@@ -173,8 +173,9 @@ apache::mod::security::activated_rules:
   - 'rules/windows-powershell-commands.data'
 
 # not working
-#apache::mod::jk:
-#  workers_file: /etc/libapache2-mod-jk/workers.properties
+apache::mod::jk:
+  'jk1':
+    workers_file: /etc/libapache2-mod-jk/workers.properties
 ##  workers_file: '/etc/workers.properties'
 #  workers_file_content:
 #    worker_lists: workerkundea
