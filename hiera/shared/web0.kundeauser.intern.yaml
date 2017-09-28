@@ -62,12 +62,12 @@ packages:
 
 
 #    puppet:///modules/<MODULE NAME>/<FILE PATH>
-files:
-  '/etc/libapache2-mod-jk/workers.properties':
-    source: 'puppet:///modules/kundea/workers.properties'
-    mode:  u=rwx,g=rw,o=rw
-    owner: root
-    group: root
+#files:
+#  '/etc/libapache2-mod-jk/workers.properties':
+#    source: 'puppet:///modules/kundea/workers.properties'
+#    mode:  u=rwx,g=rw,o=rw
+#    owner: root
+#    group: root
 
 #  outsourced in node.pp
 # '/home/kundea/tomcat/conf/server.xml':
