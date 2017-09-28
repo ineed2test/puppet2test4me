@@ -4,7 +4,7 @@ classes:
 #  - mycertfilemanagement
   - apache
   - apache::mod::alias
-  - apache::mod::jk
+#  - apache::mod::jk
   - apache::mod::security
   - tomcat
   - archive
@@ -69,11 +69,11 @@ files:
     owner: root
     group: root
 
-#  '/etc/apache2/mods-available/jk.conf':
-#    source: 'puppet:///modules/kundea/jk.conf'
-#    mode:  u=rwx,g=rw,o=rw
-#    owner: root
-#    group: root
+  '/etc/apache2/mods-available/jk.conf':
+    source: 'puppet:///modules/kundea/jk.conf'
+    mode:  u=rwx,g=rw,o=rw
+    owner: root
+    group: root
 
 #  outsourced in node.pp
 # '/home/kundea/tomcat/conf/server.xml':
@@ -173,15 +173,15 @@ apache::mod::security::activated_rules:
   - 'rules/windows-powershell-commands.data'
 
 # not working
-apache::mod::jk:
-  'jk1':
-    workers_file: /etc/libapache2-mod-jk/workers.properties
+#apache::mod::jk:
+#  'jk1':
+#    workers_file: /etc/libapache2-mod-jk/workers.properties
 ##  workers_file: '/etc/workers.properties'
-    workers_file_content:
-    worker_lists: workerkundea
-    worker.workerkundea.port: 8011
-    worker.workerkundea.host: localhost
-    worker.workerkundea.type: ajp13
+#    workers_file_content:
+#    worker_lists: workerkundea
+#    worker.workerkundea.port: 8011
+#    worker.workerkundea.host: localhost
+#    worker.workerkundea.type: ajp13
 apache::vhost:
   'www.kundea.local':
     vhost_name: '*'
@@ -288,6 +288,9 @@ execs:
     user: root
   'restart tomcat':
     command: '/usr/sbin/service tomcat restart'
+    user: root
+  'enable apache mod_jk':
+    command: 'a2enmod jk && service apache restart'
     user: root
 # # service running to start at systemboot
 services:
