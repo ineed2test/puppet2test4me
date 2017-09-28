@@ -313,6 +313,9 @@ execs:
   'refactor apache modsecurity':
     command: '/usr/sbin/a2dismod security && /usr/sbin/a2enmod security2 && /bin/systemctl restart apache2'
     user: root
+  'rename modsecurity conf':
+    command: '/bin/mv /etc/modsecurity/security_crs.conf /etc/modsecurity/security_crs.conf.old'
+    user: root
 # # service running to start at systemboot
 services:
   tomcat:
