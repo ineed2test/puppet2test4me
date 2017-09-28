@@ -166,15 +166,14 @@ apache::mod::security::activated_rules:
   - 'rules/unix-shell.data'
   - 'rules/windows-powershell-commands.data'
 
-apache_mod_jk:
+apache::mod::jk:
   workers_file: /etc/libapache2-mod-jk/workers.properties
 #  workers_file: '/etc/workers.properties'
   workers_file_content:
     worker_lists: workerkundea
-    some_name:
-      port: 8009
-      type: ajp13
-      host: localhost
+    worker.workerkundea.port: 8009
+    worker.workerkundea.host: localhost
+    worker.workerkundea.type: ajp13
 apache::vhost:
   'www.kundea.local':
     vhost_name: '*'
