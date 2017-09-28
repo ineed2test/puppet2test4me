@@ -4,7 +4,7 @@ classes:
 #  - mycertfilemanagement
   - apache
   - apache::mod::alias
-#  - apache::mod::jk
+  - apache::mod::jk
   - apache::mod::security
   - tomcat
   - archive
