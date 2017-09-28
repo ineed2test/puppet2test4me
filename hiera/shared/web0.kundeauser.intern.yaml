@@ -177,8 +177,10 @@ apache::mod::jk::workers_file: /etc/libapache2-mod-jk/workers.properties
 apache::mod::jk::workers_file_content:
   worker_lists:
     - workerkundea
-  some_name:
+  workerkundea:
     port: 8009
+    host: localhost
+    type: ajp13
 #apache::mod::jk::worker_lists: workerkundea
 #apache::mod::jk::workers_file_content:
 #  worker.workerkundea.port: 8011
