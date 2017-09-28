@@ -307,6 +307,7 @@ execs:
 #    user: root
    'refactor apache modsecurity':
      command: '/usr/sbin/a2dismod security && /usr/sbin/a2enmod security2 && /bin/systemctl restart apache2'
+     user: root
 # # service running to start at systemboot
 services:
   tomcat:
