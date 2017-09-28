@@ -62,7 +62,7 @@ packages:
 
 
 #    puppet:///modules/<MODULE NAME>/<FILE PATH>
-#files:
+files:
 #  '/etc/libapache2-mod-jk/workers.properties':
 #    source: 'puppet:///modules/kundea/workers.properties'
 #    mode:  u=rwx,g=rw,o=rw
