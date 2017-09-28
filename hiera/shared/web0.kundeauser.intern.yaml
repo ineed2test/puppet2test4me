@@ -4,8 +4,8 @@ classes:
 #  - mycertfilemanagement
   - apache
   - apache::mod::alias
-  - apache::mod::jk
-  - apache::mod::security
+#  - apache::mod::jk
+#  - apache::mod::security
   - tomcat
   - archive
 # with parameterized class webserver.pp
