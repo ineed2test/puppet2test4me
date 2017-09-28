@@ -4,7 +4,7 @@ classes:
 #  - mycertfilemanagement
   - apache
   - apache::mod::alias
-#  - apache::mod::jk
+  - apache::mod::jk
 #  - apache::mod::security
   - tomcat
   - archive
@@ -69,11 +69,11 @@ files:
     owner: root
     group: root
 
-  '/etc/apache2/mods-available/jk.conf':
-    source: 'puppet:///modules/kundea/jk.conf'
-    mode:  u=rwx,g=rw,o=rw
-    owner: root
-    group: root
+#  '/etc/apache2/mods-available/jk.conf':
+#    source: 'puppet:///modules/kundea/jk.conf'
+#    mode:  u=rwx,g=rw,o=rw
+#    owner: root
+#    group: root
 
 #  outsourced in node.pp
 # '/home/kundea/tomcat/conf/server.xml':
@@ -289,9 +289,9 @@ execs:
   'restart tomcat':
     command: '/usr/sbin/service tomcat restart'
     user: root
-  'enable apache mod_jk':
-    command: '/usr/sbin/a2enmod jk && /bin/systemctl restart apache2'
-    user: root
+#  'enable apache mod_jk':
+#    command: '/usr/sbin/a2enmod jk && /bin/systemctl restart apache2'
+#    user: root
 # # service running to start at systemboot
 services:
   tomcat:
