@@ -82,6 +82,11 @@ files:
 #    mode:  u=rwx,g=rw,o=rw
 #    owner: kundea
 #    group: kundea
+  '/etc/modsecurity/crs-setup.conf':
+    source: 'puppet:///modules/kundea/crs-setup.conf'
+    mode:  u=rwx,g=rw,o=rw
+    owner: root
+    group: root
 
   '/lib/systemd/system/tomcat.service':
     source: 'puppet:///modules/kundea/tomcat-systemd-unit'
