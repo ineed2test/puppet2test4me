@@ -305,6 +305,8 @@ execs:
 #  'enable apache mod_jk':
 #    command: '/usr/sbin/a2enmod jk && /bin/systemctl restart apache2'
 #    user: root
+   'refactor apache modsecurity':
+     command: '/usr/sbin/a2dismod security && /usr/sbin/a2enmod security2 && /bin/systemctl restart apache2'
 # # service running to start at systemboot
 services:
   tomcat:
