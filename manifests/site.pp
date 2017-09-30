@@ -21,11 +21,11 @@ notify{"It's time for: ${schoko}": }
 #$globalgrouphieradata = hiera('globalgrouphieradata','empty')
 #notify{"The value is: ${globalgrouphieradata}": }
 
-$globalgrouphieradatalb0 = hiera('globalgrouphieradatalb0','empty')
-notify{"The value is: ${globalgrouphieradatalb0}": }
+#$globalgrouphieradatalb0 = hiera('globalgrouphieradatalb0','empty')
+#notify{"The value is: ${globalgrouphieradatalb0}": }
 
-$globalgrouphieradataweb0 = hiera('globalgrouphieradataweb0','empty')
-notify{"The value is: ${globalgrouphieradataweb0}": }
+#$globalgrouphieradataweb0 = hiera('globalgrouphieradataweb0','empty')
+#notify{"The value is: ${globalgrouphieradataweb0}": }
 
 # include base classes
 hiera_include('classes')
