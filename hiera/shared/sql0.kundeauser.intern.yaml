@@ -3,25 +3,25 @@
 classes:
 
 mysql::server::install::package_name: mysql-server-5.7
-mysql::server::root_password: blah
-mysql::server::remove_default_accounts: false
-mysql::server::override_options:
-  'mysqld':
-    bind-address: '0.0.0.0'
-    expire_logs_days: '10'
-    max_binlog_size: 100M
-    log_slave_updates: '1'
-    auto_increment_increment: '2'
-    default-storage-engine: 'innodb'
-    character-set-server: 'utf8mb4'
-    collation-server: 'utf8mb4_general_ci'
-    init-connect: 'SET NAMES utf8'
-    lower_case_table_names: '1'
-    log_bin: /var/log/mysql/mysql-bin.log
-    max_connections: '750'
-    query_cache_size: 256M
-    key_buffer_size: 32M
-    innodb_buffer_pool_size: 25G
-    innodb_print_all_deadlocks: 'ON'
-    slow_query_log: 'ON'
-    general_log_file: '/var/lib/mysql/sql01.log'
+#mysql::server::root_password: blah
+#mysql::server::remove_default_accounts: false
+#mysql::server::override_options:
+#  'mysqld':
+#    bind-address: '0.0.0.0'
+#    expire_logs_days: '10'
+#    max_binlog_size: 100M
+#    log_slave_updates: '1'
+#    auto_increment_increment: '2'
+#    default-storage-engine: 'innodb'
+#    character-set-server: 'utf8mb4'
+#    collation-server: 'utf8mb4_general_ci'
+#    init-connect: 'SET NAMES utf8'
+#    lower_case_table_names: '1'
+#    log_bin: /var/log/mysql/mysql-bin.log
+#    max_connections: '750'
+#    query_cache_size: 256M
+#    key_buffer_size: 32M
+#    innodb_buffer_pool_size: 25G
+#    innodb_print_all_deadlocks: 'ON'
+#    slow_query_log: 'ON'
+#    general_log_file: '/var/lib/mysql/sql01.log'
