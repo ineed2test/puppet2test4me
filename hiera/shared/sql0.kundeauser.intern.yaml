@@ -1,5 +1,9 @@
 ---
 
+classes:
+
+  - mysql::server
+  - mysql::server::install
 
 mysql::server::install::package_name: mysql-server-5.7
 mysql::server::root_password: blah
