@@ -3,9 +3,11 @@
 classes:
 
   - mysql::server
-  - mysql::server::install
+#  - mysql::server::install
 
-mysql::server::install::package_name: mysql-server-5.7
+mysql::server::package_name: mysql-server-5.7
+mysql::server::package_endure: 5.7.11-4.1.el7
+mysql::server::service_name: mysql
 mysql::server::root_password: blah
 mysql::server::remove_default_accounts: false
 mysql::server::override_options:
