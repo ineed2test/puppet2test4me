@@ -5,6 +5,7 @@ schoko: vanilie
 #globalgrouphieradata: web0.kundeauser.intern
 globalgrouphieradatalb0: lb0.kundeauser.intern
 globalgrouphieradataweb0: web0.kundeauser.intern
+globalgrouphieradatasecurity: security
 
 
 admins:
