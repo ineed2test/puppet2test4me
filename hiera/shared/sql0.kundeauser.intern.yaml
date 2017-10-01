@@ -11,13 +11,13 @@ mysql::server::service_name: mysql
 mysql::server::root_password: blah
 mysql::server::remove_default_accounts: false
 mysql::server::override_options:
-#  'mysqld':
-#    bind-address: '0.0.0.0'
-#    expire_logs_days: '10'
-#    max_binlog_size: 100M
-#    log_slave_updates: '1'
-#    auto_increment_increment: '2'
-#    default-storage-engine: 'innodb'
+  'mysqld':
+    bind-address: '0.0.0.0'
+    expire_logs_days: '10'
+    max_binlog_size: 100M
+    log_slave_updates: '1'
+    auto_increment_increment: '2'
+    default-storage-engine: 'innodb'
 #    character-set-server: 'utf8mb4'
 #    collation-server: 'utf8mb4_general_ci'
 #    init-connect: 'SET NAMES utf8'
