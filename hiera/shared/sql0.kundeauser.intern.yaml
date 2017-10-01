@@ -2,6 +2,8 @@
 
 classes:
 
+  - mysql
+
 mysql::server::install::package_name: mysql-server-5.7
 #mysql::server::root_password: blah
 #mysql::server::remove_default_accounts: false
