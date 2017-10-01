@@ -82,7 +82,9 @@ files:
 #    mode:  u=rwx,g=rw,o=rw
 #    owner: kundea
 #    group: kundea
-  '/etc/modsecurity/crs-setup.conf':
+
+
+  '/etc/modsecurity/crs/crs-setup.conf':
     source: 'puppet:///modules/kundea/crs-setup.conf'
     mode:  u=rwx,g=rw,o=rw
     owner: root
@@ -130,7 +132,7 @@ apache::default_vhost: false
 
 # modsecurity
 apache::mod::security::secdefaultaction: 'pass'
-apache::mod::security::modsec_dir: /etc/modsecurity
+apache::mod::security::modsec_dir: /etc/modsecurity/crs
 apache::mod::security::manage_security_crs: false
 apache::mod::security::activated_rules:
   - 'rules/crawlers-user-agents.data'
