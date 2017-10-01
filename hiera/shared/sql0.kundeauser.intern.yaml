@@ -3,9 +3,9 @@
 classes:
   - mysql
 
+mysql::server::install::package_name: mysql-server-5.7
 mysql::server::root_password: blah
 mysql::server::remove_default_accounts: false
-mysql::server::version: '5.6'
 mysql::server::override_options:
   'mysqld':
     bind-address: '0.0.0.0'
