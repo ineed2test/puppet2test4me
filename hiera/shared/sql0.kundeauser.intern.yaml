@@ -2,9 +2,9 @@
 
 
 mysql::server::install::package_name: mysql-server-5.7
-#mysql::server::root_password: blah
-#mysql::server::remove_default_accounts: false
-#mysql::server::override_options:
+mysql::server::root_password: blah
+mysql::server::remove_default_accounts: false
+mysql::server::override_options:
 #  'mysqld':
 #    bind-address: '0.0.0.0'
 #    expire_logs_days: '10'
