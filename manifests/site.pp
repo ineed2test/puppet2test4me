@@ -128,4 +128,4 @@ create_resources('service', $services)
 # With define resource type tcserverconf.pp
 #Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> File['/home/kundea/tomcat/conf/server.xml'] -> Service['tomcat']
 # with parameterized class webserver.pp
-Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> Tomcat::Config::Server::Tomcat_users['user1'] -> Class[Kundea::Webserver] -> Service['tomcat'] -> Exec['restart tomcat'] -> Exec['refactor apache modsecurity']
+#Tomcat::Install['/home/kundea/tomcat'] -> Tomcat::Instance['default'] -> Tomcat::Config::Server::Tomcat_users['manager-gui'] -> Tomcat::Config::Server::Tomcat_users['user1'] -> Class[Kundea::Webserver] -> Service['tomcat'] -> Exec['restart tomcat'] -> Exec['refactor apache modsecurity']
