@@ -131,6 +131,7 @@ apache::default_vhost: false
 # modsecurity
 apache::mod::security::secdefaultaction: 'pass'
 apache::mod::security::modsec_dir: /etc/modsecurity
+apache::mod::security::manage_security_crs: false
 apache::mod::security::activated_rules:
   - 'rules/crawlers-user-agents.data'
   - 'rules/iis-errors.data'
