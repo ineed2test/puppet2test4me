@@ -38,7 +38,8 @@ mysql::server::override_options:
 mysql::server::users:
   'kurt@%':
     ensure: present
-    password_hash: pwkurt
+# MariaDB [(none)]> SELECT PASSWORD('pwkundea');
+    password_hash: *4553641D99805ACAE38C64D2F2CB1357E85FC2B3
 mysql::server::grants:
   'kurt@%/kundea.*':
     ensure: present
