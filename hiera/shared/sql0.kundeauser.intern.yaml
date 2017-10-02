@@ -62,6 +62,11 @@ tomcat_config_server_connector:
     protocol: 'HTTP/1.1'
     purge_connectors: true
 
+tomcat::war:
+  'solr.war':
+    catalina_base: /home/kundea/tomcat
+    war_source: 'puppet:///modules/kundea/solr.war'
+
 mysql::server::package_name: mariadb-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
 mysql::server::service_name: mariadb
