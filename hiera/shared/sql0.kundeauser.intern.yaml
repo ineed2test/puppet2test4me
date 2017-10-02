@@ -3,7 +3,7 @@
 classes:
 
   - mysql::server
-  - mysql::client
+  - mysql::client::install
 #  - mysql::server::install
 
 mysql::server::package_name: mysql-server
