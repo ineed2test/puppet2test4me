@@ -31,7 +31,7 @@ mysql::server::override_options:
     innodb_print_all_deadlocks: 'ON'
     slow_query_log: 'ON'
     general_log_file: '/var/lib/mysql/sql01.log'
-    mysql::server::databases:
+mysql::server::databases:
   'kundea':
     ensure: present
     charset: utf8
