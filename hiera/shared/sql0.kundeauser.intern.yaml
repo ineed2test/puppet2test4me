@@ -8,7 +8,7 @@ classes:
 
 #mysql::server::package_name: mysql-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
-mysql::server::service_name: mysql
+mysql::server::service_name: mariadb
 mysql::server::root_password: blah
 mysql::server::remove_default_accounts: false
 mysql::server::override_options:
