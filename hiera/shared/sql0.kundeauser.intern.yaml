@@ -60,6 +60,6 @@ mysql::server::grants:
 #    dbname: kundea
 #    host: '%'
 #    grant: ALL
-
- rabbitmq:
-   port:5672
+rabbitmq:
+  'myrabbitmq':
+    port:5672
