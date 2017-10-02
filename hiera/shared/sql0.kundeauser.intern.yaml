@@ -59,7 +59,17 @@ files:
     group: kundea
     mode:  ugo=rwx
 
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr/conf/data-config.xml':
+    source: 'puppet:///modules/kundea/data-config.xml'
+    mode:  u=rwx,g=rw,o=rw
+    owner: kundea
+    group: kundea
 
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr/conf/solrconfig.xml':
+    source: 'puppet:///modules/kundea/solrconfig.xml'
+    mode:  u=rwx,g=rw,o=rw
+    owner: kundea
+    group: kundea
   #  '/home/kundea/tomcat/bin/setenv.sh':
   #    source: 'puppet:///modules/kundea/setenv.sh'
   #    mode:  u=rwx,g=rw,o=rw
