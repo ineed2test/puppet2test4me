@@ -49,7 +49,7 @@ mysql::server::override_options:
 #    table: kundea.*
 #    user: kurt@%
 
-mysql::db
+mysql::db:
   'kundea1':
     user: kurt
     password: pwkurt
