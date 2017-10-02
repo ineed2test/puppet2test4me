@@ -63,9 +63,9 @@ tomcat_config_server_connector:
     purge_connectors: true
 
 tomcat_war:
-  'solrwar':
+  'solr.war':
     catalina_base: /home/kundea/tomcat
-    war_source: 'puppet:///modules/kundea/solr.war'
+    war_source: 'puppet:///modules/kundea/'
 
 mysql::server::package_name: mariadb-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
