@@ -76,7 +76,12 @@ files:
   #    owner: root
   #    group: root
 
-
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr/lib':
+    ensure: directory
+    path: /home/kundea/tomcat/conf/Catalina/localhost/solr/lib
+    owner: kundea
+    group: kundea
+    mode:  ugo=rwx
 
   '/home/kundea':
     ensure: directory
@@ -84,6 +89,10 @@ files:
     owner: kundea
     group: kundea
     mode:  ugo=rwx
+
+  '/home/kundea/solr':
+    ensure: link
+    target: '/home/kundea/tomcat'
 
 # tomcat solr
 tomcat_install:
