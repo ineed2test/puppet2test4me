@@ -6,6 +6,8 @@ classes:
   - mysql::client::install
   - mysql::server::install
 #  - mysql::db
+  - rabbitmq
+
 mysql::server::package_name: mariadb-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
 mysql::server::service_name: mariadb
@@ -38,6 +40,7 @@ mysql::server::databases:
 mysql::server::users:
   'kurt@%':
     ensure: present
+# convert with sql command
 # MariaDB [(none)]> SELECT PASSWORD('pwkundea');
     password_hash: '*4553641D99805ACAE38C64D2F2CB1357E85FC2B3'
 mysql::server::grants:
@@ -57,3 +60,6 @@ mysql::server::grants:
 #    dbname: kundea
 #    host: '%'
 #    grant: ALL
+
+rabbitmq:
+  port:5672
