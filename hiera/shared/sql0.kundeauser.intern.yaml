@@ -7,6 +7,51 @@ classes:
   - mysql::server::install
 #  - mysql::db
   - rabbitmq
+# solr tomcat
+  - tomcat
+
+packages:
+  openjdk-8-jdk:
+    ensure: present
+
+files:
+  '/lib/systemd/system/tomcat.service':
+    source: 'puppet:///modules/kundea/tomcat-systemd-unit'
+    mode:  u=rwx,g=rw,o=rw
+    owner: root
+    group: root
+
+  '/etc/systemd/system/multi-user.target.wants/tomcat.service':
+    ensure: link
+    target: lib/systemd/system/tomcat.service
+
+  #  '/home/kundea/tomcat/bin/setenv.sh':
+  #    source: 'puppet:///modules/kundea/setenv.sh'
+  #    mode:  u=rwx,g=rw,o=rw
+  #    owner: root
+  #    group: root
+
+
+
+  '/home/kundea':
+    ensure: directory
+    path: /home/kundea
+    owner: kundea
+    group: kundea
+    mode:  ugo=rwx
+
+tomcat_install:
+  '/home/kundea/tomcat':
+    source_url: 'http://www-eu.apache.org/dist/tomcat/tomcat-7/v7.0.81/bin/apache-tomcat-7.0.81.tar.gz'
+    catalina_home: /home/kundea/tomcat
+    user: kundea
+    group: kundea
+
+tomcat_instance:
+  default:
+    catalina_home: /home/kundea/tomcat
+    user: kundea
+    group: kundea
 
 mysql::server::package_name: mariadb-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
