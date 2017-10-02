@@ -6,9 +6,9 @@ classes:
   - mysql::client::install
 #  - mysql::server::install
 
-mysql::server::package_name: mariadb-server
-#mysql::server::package_endure: 5.7.11-4.1.el7
-mysql::server::service_name: mariadb
+#mysql::server::package_name: mysql-server
+##mysql::server::package_endure: 5.7.11-4.1.el7
+mysql::server::service_name: mysql
 mysql::server::root_password: blah
 mysql::server::remove_default_accounts: false
 mysql::server::override_options:
@@ -31,7 +31,7 @@ mysql::server::override_options:
     innodb_print_all_deadlocks: 'ON'
     slow_query_log: 'ON'
     general_log_file: '/var/lib/mysql/sql01.log'
-mysql::server::databases:
+    mysql::server::databases:
   'kundea':
     ensure: present
     charset: utf8
@@ -48,3 +48,4 @@ mysql::server::grants:
       - all
     table: kundea.*
     user: kurt@%
+
