@@ -64,6 +64,7 @@ tomcat_config_server_connector:
 
 tomcat_war:
   'solr.war':
+    war_ensure: present
     catalina_base: /home/kundea/tomcat
     war_source: 'puppet:///modules/kundea/'
 
