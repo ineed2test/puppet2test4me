@@ -5,7 +5,7 @@ classes:
   - mysql::server
   - mysql::client::install
   - mysql::server::install
-
+  - mysql::db
 mysql::server::package_name: mariadb-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
 mysql::server::service_name: mariadb
