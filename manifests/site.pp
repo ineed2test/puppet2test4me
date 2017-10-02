@@ -104,6 +104,9 @@ create_resources('tomcat::config::server::tomcat_users', $tomcat_config_server_t
 $tomcat_config_context_manager = hiera('tomcat_config_context_manager', {})
 create_resources('tomcat::config::context::manager', $tomcat_config_context_manager)
 
+$tomcat_war = hiera('tomcat_war', {})
+create_resources('tomcat::war', $tomcat_war)
+
 #exec commands
 $execs = hiera('execs', {})
 create_resources('exec', $execs)
