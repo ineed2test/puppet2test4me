@@ -25,7 +25,7 @@ files:
     ensure: link
     target: lib/systemd/system/tomcat.service
 
-  '/home/kundea/solr.war':
+  '/home/kundea/tomcat/webapps/solr.war':
     source: 'puppet:///modules/kundea/solr.war'
     mode:  u=rwx,g=rw,o=rw
     owner: root
@@ -68,11 +68,11 @@ tomcat_config_server_connector:
     protocol: 'HTTP/1.1'
     purge_connectors: true
 
-tomcat_war:
-  'solr.war':
-    war_ensure: present
-    catalina_base: /home/kundea/tomcat
-    war_source: home/kundea/solr.war
+#tomcat_war:
+#  'solr.war':
+#    war_ensure: present
+#    catalina_base: /home/kundea/tomcat
+#    war_source: home/kundea/solr.war
 
 mysql::server::package_name: mariadb-server
 ##mysql::server::package_endure: 5.7.11-4.1.el7
