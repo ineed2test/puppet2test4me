@@ -31,10 +31,10 @@ mysql::server::override_options:
     innodb_print_all_deadlocks: 'ON'
     slow_query_log: 'ON'
     general_log_file: '/var/lib/mysql/sql01.log'
-#    mysql::server::databases:
-#  'kundea':
-#    ensure: present
-#    charset: utf8
+    mysql::server::databases:
+  'kundea':
+    ensure: present
+    charset: utf8
 #mysql::server::users:
 #  'kurt@%':
 #    ensure: present
@@ -49,10 +49,10 @@ mysql::server::override_options:
 #    table: kundea.*
 #    user: kurt@%
 
-mysql::db:
-  'kundea1':
-    user: kurt
-    password: pwkurt
-    dbname: kundea
-    host: '%'
-    grant: ALL
+#mysql::db:
+#  'kundea1':
+#    user: kurt
+#    password: pwkurt
+#    dbname: kundea
+#    host: '%'
+#    grant: ALL
