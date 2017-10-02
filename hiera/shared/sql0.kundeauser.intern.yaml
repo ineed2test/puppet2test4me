@@ -39,7 +39,7 @@ mysql::server::users:
     ensure: present
     password_hash: pwkurt
 mysql::server::grants:
-  'kurt@%/kundea:*':
+  'kurt@%/kundea.*':
     ensure: present
     options:
       - GRANT
