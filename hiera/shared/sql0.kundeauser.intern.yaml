@@ -62,7 +62,7 @@ tomcat_config_server_connector:
     protocol: 'HTTP/1.1'
     purge_connectors: true
 
-tomcat::war:
+tomcat_war:
   'solr.war':
     catalina_base: /home/kundea/tomcat
     war_source: 'puppet:///modules/kundea/solr.war'
