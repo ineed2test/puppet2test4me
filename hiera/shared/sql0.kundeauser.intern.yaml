@@ -25,6 +25,12 @@ files:
     ensure: link
     target: lib/systemd/system/tomcat.service
 
+  '/home/kundea/solr.war':
+    source: 'puppet:///modules/kundea/solr.war'
+    mode:  u=rwx,g=rw,o=rw
+    owner: root
+    group: root
+
   #  '/home/kundea/tomcat/bin/setenv.sh':
   #    source: 'puppet:///modules/kundea/setenv.sh'
   #    mode:  u=rwx,g=rw,o=rw
