@@ -54,5 +54,5 @@ mysql::db:
     user: kurt
     password: pwkurt
     dbname: kundea
-    host: %
+    host: '%'
     grant: ALL
