@@ -31,21 +31,21 @@ mysql::server::override_options:
     innodb_print_all_deadlocks: 'ON'
     slow_query_log: 'ON'
     general_log_file: '/var/lib/mysql/sql01.log'
-    mysql::server::databases:
-  'kundea':
-    ensure: present
-    charset: utf8
-mysql::server::users:
-  'kurt@%':
-    ensure: present
-    password_hash: pwkurt
-mysql::server::grants:
-  'kurt@%/kundea.*':
-    ensure: present
-    options:
-      - GRANT
-    privileges:
-      - all
-    table: kundea.*
-    user: kurt@%
+#    mysql::server::databases:
+#  'kundea':
+#    ensure: present
+#    charset: utf8
+#mysql::server::users:
+#  'kurt@%':
+#    ensure: present
+#    password_hash: pwkurt
+#mysql::server::grants:
+#  'kurt@%/kundea.*':
+#    ensure: present
+#    options:
+#      - GRANT
+#    privileges:
+#      - all
+#    table: kundea.*
+#    user: kurt@%
 
