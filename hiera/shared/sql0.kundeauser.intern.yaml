@@ -61,5 +61,5 @@ mysql::server::grants:
 #    host: '%'
 #    grant: ALL
 
-rabbitmq:
-  port:5672
+ rabbitmq:
+   port:5672
