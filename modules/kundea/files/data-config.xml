@@ -1,0 +1,178 @@
+<dataConfig>
+    <dataSource driver="com.mysql.jdbc.Driver"
+                url="jdbc:mysql://192.168.1.6:3306/kundea"
+                user="kurt"
+                password='pwkundea'/>
+    <document name="solrProfile">
+        <entity name="profile" query="select CONCAT('de.datingcafe.profile.SolrProfile-', (CONVERT(profile.id, CHAR(10)))) as solr_id,
+                              profile.id as profile_id,
+                                profile.title,
+                                profile.text,
+                                profile.birthday,
+                                profile.show_city,
+                                profile.height,
+                                profile.weight,
+                                profile.hair_color,
+                                profile.hair_description,
+                                profile.eye_color,
+                                profile.smoker,
+                                profile.show_zodiac_sign,
+                                profile.children,
+                                profile.photo_available,
+                                profile.photo_right,
+                                profile.blur_photo_file_name,
+                                profile.deleted,
+                                profile.last_updated,
+                                profile.profile_last_edited,
+                                profile.review_date,
+                                profile.children_description,
+                                profile.job_description,
+                                profile.figure,
+                                (CASE WHEN profile.mood_last_updated &lt; SUBDATE(NOW(), INTERVAL 7 DAY) THEN NULL ELSE profile.mood END) as mood,
+                                (CASE WHEN profile.mood_last_updated &lt; SUBDATE(NOW(), INTERVAL 7 DAY) THEN NULL ELSE profile.mood_last_updated END) as mood_last_updated,
+                                profile.no_index,
+                                TIMESTAMPDIFF(YEAR, profile.birthday, CURDATE()) as age,
+                                'de.datingcafe.profile.SolrProfile' as doctype,
+                                member.id as member_id,
+                                member.username,
+                                member.gender,
+                                member.last_login_date,
+                                member.confirmation_date,
+                                member.birthday_verified,
+                                address.postal_code,
+                                address.city,
+                                address.country,
+                                member_activity.last_active,
+                                (profile.review_date is null or profile.last_updated &gt; profile.review_date) as needs_review,
+                                /* for the zodiac sign logic: see http://www.sitepoint.com/forums/mysql-182/select-star-sign-zodiac-472917.html */
+
+                                                                (select geo_reference.longitude from geo_reference where postal_code = address.postal_code and country = address.country LIMIT 1) as longitude,
+                                                                (select geo_reference.latitude from geo_reference where postal_code = address.postal_code and country = address.country LIMIT 1) as latitude,
+                                                                (select geo_reference.region1 from geo_reference where postal_code = address.postal_code and country = address.country LIMIT 1) as state,
+                                                                (select count(id) from sympathy_click where member_to_id = member.id) as single_promotion_rank
+
+                                                                from
+                                                                        profile inner join member on profile.id = member.profile_id
+                                                                        inner join member_activity on member_activity.member_id = member.id
+                                                                        left outer join address on address.id = member.address_id
+
+                                                                where
+                                                                        ('${dataimporter.request.clean}' != 'false'
+                                                                        or profile.last_updated &gt; '${dataimporter.last_index_time}'
+                                                                        or member.last_updated &gt; '${dataimporter.last_index_time}'
+                                                                        or address.last_updated &gt; '${dataimporter.last_index_time}'
+                                                                        or member_activity.last_updated &gt; '${dataimporter.last_index_time}')
+                                                                        and member.membership_status &lt;&gt; 'DEACTIVATED'
+                                                                        and member.membership_status &lt;&gt; 'REGISTERED'
+                                                                        and member.last_login_date &gt;= '2010-01-01'
+                                                        ;">
+
+            <field column="solr_id" name="id"/>
+            <field column="profile_id" name="profileId_i"/>
+            <field column="title" name="profileTitle_t"/>
+            <field column="text" name="description_t"/>
+            <field column="text" name="description_ngram"/>
+            <field column="text" name="description_s"/>
+            <field column="gender" name="gender_s"/>
+            <field column="single_promotion_rank" name="singlePromotionRank_i"/>
+            <field column="birthday" name="birthday_dt"/>
+            <field column="show_city" name="showCity_b"/>
+            <field column="height" name="height_i"/>
+            <field column="weight" name="weight_i"/>
+            <field column="hair_color" name="hairColor_ngram"/>
+            <field column="hair_description" name="hairDescription_s"/>
+            <field column="hair_description" name="hairDescription_t"/>
+            <field column="eye_color" name="eyeColor_ngram"/>
+            <field column="smoker" name="smoker_s"/>
+            <field column="show_zodiac_sign" name="showZodiac_b"/>
+            <field column="children" name="children_s"/>
+            <field column="children_description" name="childrenDescription_s"/>
+            <field column="children_description" name="childrenDescription_t"/>
+            <field column="photo_available" name="photoAvailable_b"/>
+            <field column="photo_right" name="photoRight_s"/>
+            <field column="photo_file_name" name="photoFilename_s"/>
+            <field column="blur_photo_file_name" name="blurPhotoFilename_s"/>
+            <field column="deleted" name="userDeleted_b"/>
+            <field column="job_description" name="jobDescription_s"/>
+            <field column="job_description" name="jobDescription_t"/>
+            <field column="doctype" name="doctype_s"/>
+            <field column="username" name="alias_s"/>
+            <field column="username" name="alias_ngram"/>
+            <field column="username" name="alias_nedge"/>
+            <field column="username" name="alias_low"/>
+            <field column="city" name="city_s"/>
+            <field column="postal_code" name="postalCode_s"/>
+            <field column="country" name="country_s"/>
+            <field column="state" name="state_s"/>
+            <field column="last_login_date" name="lastLoginDate_dt"/>
+            <field column="mood" name="mood_t"/>
+            <field column="mood_last_updated" name="moodLastUpdated_dt"/>
+            <field column="profile_last_edited" name="profileLastEdited_dt"/>
+            <field column="zodiac_sign" name="zodiacSign_s"/>
+            <field column="longitude" name="longitude"/>
+            <field column="latitude" name="latitude"/>
+            <field column="member_id" name="memberId_i"/>
+            <field column="last_active" name="lastActivity_dt"/>
+            <field column="figure" name="figure_s"/>
+            <field column="figure" name="figure_t"/>
+            <field column="age" name="age_i"/>
+            <field column="needs_review" name="needsReview_b"/>
+            <field column="last_updated" name="lastUpdated_dt"/>
+            <field column="review_date" name="reviewDate_dt"/>
+            <field column="confirmation_date" name="confirmationDate_dt"/>
+            <field column="birthday_verified" name="birthdayVerified_b"/>
+            <field column="no_index" name="noIndex_b"/>
+        </entity>
+        <entity name="duplicateMember" query="select distinct member.id as memberId,
+                                 member.username,
+                                 member.birthday,
+                                 TIMESTAMPDIFF(YEAR, member.birthday, CURDATE()) as age,
+                                 member.gender,
+                                 member.identity_card_review_date,
+                                 membership_adjustment.adjustment,
+                                 member.membership_status,
+                                 member.last_login_date,
+                                 member.email,
+                                 member.firstname,
+                                 member.lastname,
+                                 member.cancellation_date,
+                                 member.deactivated_date,
+                                 address.postal_code,
+                                 address.city,
+                                 (CASE WHEN ml.start_date IS NULL THEN 0 ELSE 1 END) as locked,
+                                 'de.datingcafe.member.SolrDuplicateMember' as doctype
+                                 from member
+                                 left outer join address on address.id = member.address_id
+                                 left join membership_protocol on membership_protocol.member_id = member.id
+                                 left join membership_adjustment on membership_adjustment.membership_protocol_id = membership_protocol.id and membership_adjustment.class = 'de.datingcafe.member.TrialTime'
+                                 left join member_lock ml on member.id = ml.member_id and ml.unlocked_date is null
+                                 where ('${dataimporter.request.clean}' != 'false'
+                                 or member.last_updated &gt; '${dataimporter.last_index_time}'
+                                 or address.last_updated &gt; '${dataimporter.last_index_time}')
+                         ;">
+
+            <field column="memberId" name="id"/>
+            <field column="memberId" name="memberId_l"/>
+            <field column="username" name="username_s"/>
+            <field column="birthday" name="birthday_dt"/>
+            <field column="age" name="age_i"/>
+            <field column="gender" name="gender_s"/>
+            <field column="identity_card_review_date" name="identityCardReviewDate_dt"/>
+            <field column="deactivated_date" name="deactivatedDate_dt"/>
+            <field column="adjustment" name="adjustment_s"/>
+            <field column="membership_status" name="membershipStatus_s"/>
+            <field column="last_login_date" name="lastLoginDate_dt"/>
+            <field column="email" name="email_s"/>
+            <field column="email" name="email_low"/>
+            <field column="firstname" name="firstname_s"/>
+            <field column="firstname" name="firstname_low"/>
+            <field column="lastname" name="lastname_s"/>
+            <field column="lastname" name="lastname_low"/>
+            <field column="cancellation_date" name="cancellationDate_dt"/>
+            <field column="postal_code" name="postalCode_s"/>
+            <field column="city" name="city_s"/>
+            <field column="locked" name="locked_b"/>
+            <field column="doctype" name="doctype_s"/>
+        </entity>
+    </document>
+</dataConfig>

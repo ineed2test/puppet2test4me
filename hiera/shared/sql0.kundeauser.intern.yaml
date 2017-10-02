@@ -31,6 +31,35 @@ files:
     owner: root
     group: root
 
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr':
+    ensure: directory
+    path: /home/kundea/tomcat/conf/Catalina/localhost/solr
+    owner: kundea
+    group: kundea
+    mode:  ugo=rwx
+
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr/conf':
+    ensure: directory
+    path: /home/kundea/tomcat/conf/Catalina/localhost/solr/conf
+    owner: kundea
+    group: kundea
+    mode:  ugo=rwx
+
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr/data':
+    ensure: directory
+    path: /home/kundea/tomcat/conf/Catalina/localhost/solr/data
+    owner: kundea
+    group: kundea
+    mode:  ugo=rwx
+
+  '/home/kundea/tomcat/conf/Catalina/localhost/solr/lib':
+    ensure: directory
+    path: /home/kundea/tomcat/conf/Catalina/localhost/solr/lib
+    owner: kundea
+    group: kundea
+    mode:  ugo=rwx
+
+
   #  '/home/kundea/tomcat/bin/setenv.sh':
   #    source: 'puppet:///modules/kundea/setenv.sh'
   #    mode:  u=rwx,g=rw,o=rw
@@ -68,6 +97,7 @@ tomcat_config_server_connector:
     protocol: 'HTTP/1.1'
     purge_connectors: true
 
+# doesn't work
 #tomcat_war:
 #  'solr.war':
 #    war_ensure: present
