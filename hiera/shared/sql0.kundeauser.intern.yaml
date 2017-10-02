@@ -56,8 +56,7 @@ tomcat_instance:
 
 tomcat_config_server_connector:
   http:
-##    catalina_base: /home/kundea/tomcat
-    catalina_base: /home/tomcat
+    catalina_base: /home/kundea/tomcat
     connector_ensure: present
     port: '7081'
     protocol: 'HTTP/1.1'
